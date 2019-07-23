@@ -1,0 +1,106 @@
+/* Global Styles */
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing:border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+#root {
+  margin-top:3rem;
+}
+#content-container {
+  width:100%;
+  max-width:1200px;
+  background-color:whitesmoke;
+  margin:auto;
+  position:relative;
+}
+
+/* Site Navigation */
+#nav {
+  position:fixed;
+  top:0px;
+  width:100%;
+  height:3rem;
+  line-height:2.8rem;
+  background-color:whitesmoke;
+  font-size:16px;
+  text-align:center;
+}
+#nav input, button {
+  position:relative;
+  padding:4px;
+}
+
+/* Container Left */
+#containerL {
+  position:absolute;
+  left:0px;
+  width: 30%;
+  height:auto;
+  display:inline-block;
+}
+
+/* Container Right */
+#containerR {
+  position:absolute;
+  right:0px;
+  width: 70%;
+  height:auto;
+  background-color:darkslategray;
+  display:inline-block;
+}
+
+/* Profile */
+#profile-container {
+  width:100%;
+  height:auto;
+  position:relative;
+  border-radius:8px;
+  padding:1rem;
+}
+#profile-name {
+  position:absolute;
+  left:calc(25% + 1rem);
+  display:inline-block;
+}
+#profile-level {
+  position:absolute;
+  display:inline-block;
+  background-color:white;
+  text-align:center;
+  left:calc(25% + 1rem);
+  top:45%;
+}
+#profile-icon {
+  width:25%;
+}
+
+/* Ranked */
+#ranks-container {
+  background-color:darkslategray;
+  padding:1rem;
+  border-radius:8px;
+  width:100%;
+}
+#rank-tier {
+  width:50%;
+  padding:1rem;
+}
+#rank-rank {
+  width:50%;
+  position:absolute;
+  display:inline-block;
+  top:50%;
+  text-align:center;
+  padding:1rem;
+  padding-left:0rem;
+  padding-right:2rem;
+  color:white;
+}
