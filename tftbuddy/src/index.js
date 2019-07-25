@@ -153,6 +153,7 @@ function get_emblem(rankEmblem) {
 }
 
 let check_fill = 0;
+
 let type_glacial,
     type_ranger,
     type_assassin,
@@ -391,94 +392,196 @@ class TeamPlanner extends React.Component {
                             <div id="glacialType">
                                 <img alt="Glacial"></img>
                                 <div><span></span> / 6</div>
+                                <div>
+                                    Glacials have a chance to stun for 2s on hit.<br/>
+                                    <span id="num-of-type">2</span> 20% Chance to Stun<br/>
+                                    <span id="num-of-type">4</span> 30% Chance to Stun<br/>
+                                    <span id="num-of-type">6</span> 45% Chance to Stun<br/>
+                                </div>
                             </div>
                             <div id="rangerType">
                                 <img alt="Ranger"></img>
                                 <div><span></span> / 4</div>
+                                <div>
+                                    Rangers have a chance to double their Attack Speed on hit for the next 3s.<br/>
+                                    <span id="num-of-type">2</span> 25% Chance to Double Attack Speed<br/>
+                                    <span id="num-of-type">4</span> 65% Chance to Double Attack Speed
+                                </div>
                             </div>
                             <div id="assassinType">
                                 <img alt="Assassin"></img>
                                 <div><span></span> / 6</div>
+                                <div id="assassinInfo">
+                                    Innate: Assassins leap to the farthest enemy at the start of combat and deal additional Critical Strike Damage.<br/>
+                                    <span id="num-of-type">3</span> +125% Critical Strike Damage<br/>
+                                    <span id="num-of-type">6</span> +350% Critical Strike Damage
+                                </div>
                             </div>
                             <div id="blademasterType">
                                 <img alt="Blademaster"></img>
                                 <div><span></span> / 6</div>
+                                <div id="blademasterInfo">
+                                    Blademasters have a 35% chance to strike additional times each attack.<br/>
+                                    <span id="num-of-type">3</span> One Additional Attack<br/>
+                                    <span id="num-of-type">6</span> Two Additional Attacks
+                                </div>
                             </div>
                             <div id="brawlerType">
                                 <img alt="Brawler"></img>
                                 <div><span></span> / 4</div>
+                                <div id="brawlerInfo">
+                                    All Brawlers gain bonus maximum health.<br/>
+                                    <span id="num-of-type">2</span> +300 Bonus Health<br/>
+                                    <span id="num-of-type">4</span> +700 Bonus Health
+                                </div>
                             </div>
                             <div id="elementalistType">
                                 <img alt="Elementalist"></img>
                                 <div><span></span> / 3</div>
+                                <div id="elementalistInfo">
+                                    Innate: Elementalists gain double mana from attacks.<br/>
+                                    <span id="num-of-type">3</span> At the start of combat, summon a Golem with 2200 Health
+                                </div>
                             </div>
                             <div id="guardianType">
                                 <img alt="Guardian"></img>
                                 <div><span></span> / 2</div>
+                                <div id="guardianInfo">
+                                    <span id="num-of-type">2</span> At the start of combat, all Guardians and adjacent allies gain +40 Armor. This Armor can stack.
+                                </div>
                             </div>
                             <div id="gunslingerType">
                                 <img alt="Gunslinger"></img>
-                                <div><span></span> / 4</div>
+                                <div><span></span> / 6</div>
+                                <div id="gunslingerInfo">
+                                    Gunslingers have a 50% chance to fire additional attacks on other enemies.<br/>
+                                    <span id="num-of-type">3</span> One Additional Enemy<br/>
+                                    <span id="num-of-type">6</span> Two Additional Enemeies
+                                </div>
                             </div>
                             <div id="knightType">
                                 <img alt="Knight"></img>
                                 <div><span></span> / 6</div>
+                                <div id="knightInfo">
+                                    Knights block damage from basic attacks.<br/>
+                                    <span id="num-of-type">2</span> 20 Damage Blocked<br/>
+                                    <span id="num-of-type">4</span> 40 Damage Blocked<br/>
+                                    <span id="num-of-type">6</span> 80 Damage Blocked
+                                </div>
                             </div>
                             <div id="shapeshifterType">
                                 <img alt="Shapeshifter"></img>
                                 <div><span></span> / 3</div>
+                                <div id="shapeshifterInfo">
+                                    Shapeshifters gain Bonus Maximum Health when they transform.<br/>
+                                    <span id="num-of-type">3</span> +60% Bonus Max Health 
+                                </div>
                             </div>
                             <div id="sorcererType">
                                 <img alt="Sorcerer"></img>
                                 <div><span></span> / 6</div>
+                                <div id="sorcererInfo">
+                                    Innate: Sorcerers gain double mana from attacking and All Allies have increased Spell Damage.<br/>
+                                    <span id="num-of-type">3</span> +45% Spell Damage<br/>
+                                    <span id="num-of-type">6</span> +100% Spell Damage
+                                </div>
                             </div>
                             <div id="demonType">
                                 <img alt="Demon"></img>
                                 <div><span></span> / 6</div>
+                                <div id="demonInfo">
+                                    Attacks from Demons have a chance to burn enemy's mana and deal the additional True Damage based on mana burned.<br/>
+                                    <span id="num-of-type">2</span> 25% Chance on hit to Burn Mana<br/>
+                                    <span id="num-of-type">4</span> 50% Chance on hit to Burn Mana<br/>
+                                    <span id="num-of-type">6</span> 80% Chance on hit to Burn Mana
+                                </div>
                             </div>
                             <div id="dragonType">
                                 <img alt="Dragon"></img>
                                 <div><span></span> / 2</div>
+                                <div id="dragonInfo">
+                                    <span id="num-of-type">2</span> Dragons are immune to Magic Damage
+                                </div>
                             </div>
                             <div id="exileType">
                                 <img alt="Exile"></img>
                                 <div><span></span> / 1</div>
+                                <div id="exileInfo">
+                                    <span id="num-of-type">1</span> If an Exile has no adjacent allies at the start of combat, they gain a shield equal to 100% of their Max Health
+                                </div>
                             </div>
                             <div id="imperialType">
                                 <img alt="Imperial"></img>
                                 <div><span></span> / 4</div>
+                                <div id="imperialInfo">
+                                    Imperials deal Double Damage.<br/>
+                                    <span id="num-of-type">2</span> One Random Imperial<br/>
+                                    <span id="num-of-type">4</span> All Imperials
+                                </div>
                             </div>
                             <div id="nobleType">
                                 <img alt="Noble"></img>
                                 <div><span></span> / 6</div>
+                                <div id="nobleInfo">
+                                    Nobles gain +100 Armor and Heal 35 Health per attack.<br/>
+                                    <span id="num-of-type">3</span> One Random Ally<br/>
+                                    <span id="num-of-type">6</span> Ally Allies
+                                </div>
                             </div>
                             <div id="ninjaType">
                                 <img alt="Ninja"></img>
                                 <div><span></span> / 4</div>
+                                <div id="ninjaInfo">
+                                    The Ninja Trait is only active when you have exactly 1 or 4 Ninjas.<br/>
+                                    <span id="num-of-type">1</span> The Ninja gains +40% Attack Damage<br/>
+                                    <span id="num-of-type">4</span> All Ninjas gain +80% Attack Damage
+                                </div>
                             </div>
                             <div id="phantomType">
                                 <img alt="Phantom"></img>
                                 <div><span></span> / 2</div>
+                                <div id="phantomInfo">
+                                    <span id="num-of-type">2</span> Curse a random enemy at the start of combat, their Health is reduced to 100
+                                </div>
                             </div>
                             <div id="pirateType">
                                 <img alt="Pirate"></img>
                                 <div><span></span> / 3</div>
+                                <div id="pirateInfo">
+                                    <span id="num-of-type">3</span> Earn up to 4 additional Gold after combat against another player 
+                                </div>
                             </div>
                             <div id="robotType">
                                 <img alt="Robot"></img>
                                 <div><span></span> / 1</div>
+                                <div id="robotInfo">
+                                    <span id="num-of-type">1</span> Robots start combat at full mana
+                                </div>
                             </div>
                             <div id="voidType">
                                 <img alt="Void"></img>
                                 <div><span></span> / 3</div>
+                                <div id="voidInfo">
+                                    <span id="num-of-type">3</span> All basic attacks ignore 50% of the enemy's Armor
+                                </div>
                             </div>
                             <div id="wildType">
                                 <img alt="Wild"></img>
                                 <div><span></span> / 4</div>
+                                <div id="wildInfo">
+                                    Attacks generate stacks of Fury (stacks up to 5 times). Each stack of fury gives +10% Attack Speed.<br/>
+                                    <span id="num-of-type">2</span> Wild Allies Only<br/>
+                                    <span id="num-of-type">4</span> All Allies
+                                </div>
                             </div>
                             <div id="yordleType">
                                 <img alt="Yordle"></img>
                                 <div><span></span> / 6</div>
+                                <div id="yordleInfo">
+                                    Attacks against Ally Yordles have a chance to miss.<br/>
+                                    <span id="num-of-type">3</span> 25% Chance to Miss<br/>
+                                    <span id="num-of-type">6</span> 60% Chance to Miss
+                                </div>
                             </div>
                         </div>
 

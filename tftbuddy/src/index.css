@@ -152,7 +152,8 @@
   border-radius:80px;
   display:inline-block;
 }
-/* Modal Box */
+
+/* Modal Box Champion Pool */
 #modal {
   display:none;
   position:fixed;
@@ -191,6 +192,271 @@
   right:0px;
   bottom:0px;
 } 
+
+/* Champion Class/Origin Styles */
 #assassinType, #blademasterType, #brawlerType, #elementalistType, #guardianType, #gunslingerType, #knightType, #rangerType, #shapeshifterType, #sorcererType, #demonType, #dragonType, #exileType, #glacialType, #imperialType, #nobleType, #ninjaType, #phantomType, #pirateType, #robotType, #voidType, #wildType, #yordleType {
   display:none;
+  padding:1rem;
+  text-align:center;
+  background-color:darkslategray;
+  border-radius:8px;
+  margin:2px;
+  color:White;
+}
+#assassinType div:nth-child(3) {
+  display:none;
+}
+#assassinType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#blademasterType div:nth-child(3) {
+  display:none;
+}
+#blademasterType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#brawlerType div:nth-child(3) {
+  display:none;
+}
+#brawlerType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#elementalistType div:nth-child(3) {
+  display:none;
+}
+#elementalistType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#guardianType div:nth-child(3) {
+  display:none;
+}
+#guardianType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#gunslingerType div:nth-child(3) {
+  display:none;
+}
+#gunslingerType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#knightType div:nth-child(3) {
+  display:none;
+}
+#knightType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#rangerType div:nth-child(3) {
+  display:none;
+}
+#rangerType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#shapeshifterType div:nth-child(3) {
+  display:none;
+}
+#shapeshifterType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#sorcererType div:nth-child(3) {
+  display:none;
+}
+#sorcererType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#demonType div:nth-child(3) {
+  display:none;
+}
+#demonType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#dragonType div:nth-child(3) {
+  display:none;
+}
+#dragonType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#exileType div:nth-child(3) {
+  display:none;
+}
+#exileType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#glacialType div:nth-child(3) {
+  display:none;
+}
+#glacialType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#imperialType div:nth-child(3) {
+  display:none;
+}
+#imperialType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#nobleType div:nth-child(3) {
+  display:none;
+}
+#nobleType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#ninjaType div:nth-child(3) {
+  display:none;
+}
+#ninjaType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#phantomType div:nth-child(3) {
+  display:none;
+}
+#phantomType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#pirateType div:nth-child(3) {
+  display:none;
+}
+#pirateType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#robotType div:nth-child(3) {
+  display:none;
+}
+#robotType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#voidType div:nth-child(3) {
+  display:none;
+}
+#voidType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#wildType div:nth-child(3) {
+  display:none;
+}
+#wildType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#yordleType div:nth-child(3) {
+  display:none;
+}
+#yordleType:hover div:nth-child(3) {
+  display:block;
+  position:absolute;
+  background-color:black;
+  z-index:97;
+  padding:1rem;
+  text-align:left;
+}
+#num-of-type {
+  border-right: 4px solid white;
+  padding-right:8px;
 }
