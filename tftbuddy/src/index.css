@@ -53,8 +53,8 @@
   right:0px;
   width: 70%;
   height:auto;
-  background-color:darkslategray;
   display:inline-block;
+  padding:1rem;
 }
 
 /* Profile */
@@ -103,4 +103,94 @@
   padding-left:0rem;
   padding-right:2rem;
   color:white;
+}
+
+/* Match History */
+#match-history-container {
+  height: 400px;
+  width:100%;
+  padding:1rem;
+  background-color:darkslategray;
+  border-radius:8px;
+  color:white;
+}
+
+/* Team Planner */
+#add-champ-button {
+  height:80px;
+  width:80px;
+  border:none;
+  border-radius:80px;
+  background-color:rgb(42, 58, 58);
+  color:white;
+  display:inline-block;
+}
+#add-champ-button strong {
+  font-size:3rem;
+  height:80px;
+  position:absolute;
+  top:3px;
+  text-align: center;
+  left:50%;
+  transform: translate(-50%);
+}
+#champ-pool div {
+  color:white;
+}
+#champ-pool img {
+  height:80px;
+  width:80px;
+  margin:4px;
+  border: 2px whitesmoke solid;
+  border-radius:80px;
+}
+#selected-champion-list img {
+  width:80px;
+  height:80px;
+  margin:4px;
+  border: 4px black solid;
+  border-radius:80px;
+  display:inline-block;
+}
+/* Modal Box */
+#modal {
+  display:none;
+  position:fixed;
+  width:auto;
+  height:auto;
+  left:50%;
+  top:4rem;
+  transform:translateX(-50%);
+  padding:2rem;
+  background-color:black;
+  z-index:99;
+  color:white;
+}
+#modal img {
+  width:80px;
+  height:80px;
+  border:4px white solid;
+  border-radius:80px;
+}
+#modal h1 {
+  padding-bottom:1rem;
+}
+#modal-quit {
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  color:white;
+}
+#modal-overlay {
+  display:none;
+  position:fixed;
+  z-index:98;
+  background-color:rgba(0,0,0,0.7);
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+} 
+#assassinType, #blademasterType, #brawlerType, #elementalistType, #guardianType, #gunslingerType, #knightType, #rangerType, #shapeshifterType, #sorcererType, #demonType, #dragonType, #exileType, #glacialType, #imperialType, #nobleType, #ninjaType, #phantomType, #pirateType, #robotType, #voidType, #wildType, #yordleType {
+  display:none;
 }
