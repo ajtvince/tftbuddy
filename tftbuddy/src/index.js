@@ -12,45 +12,6 @@ import emblemMaster from './etc/emblems/Emblem_Master.png';
 import emblemGrandmaster from './etc/emblems/Emblem_Grandmaster.png';
 import emblemChallenger from './etc/emblems/Emblem_Challenger.png';
 
-
-class SummonerSearch extends React.Component {
-    render() {
-        return (
-
-            <div id="content-container">
-
-                <div id="containerL">
-                
-                    <div id="profile-container">
-                        <img id="profile-icon" src={this.props.profileIcon} ></img>
-                        <div id="profile-level"><em>Level {this.props.level}</em></div>
-                        <h2 id="profile-name">{this.props.summoner}</h2>
-                    </div>
-                    
-                    <div id="ranks-container">
-                            <img id="rank-tier" src={this.props.tftTier}></img>
-                            <div id="rank-rank">
-                                <h2>{this.props.tftRank}</h2>
-                                <p>{this.props.tftWins}W - {this.props.tftLosses}L ({ Math.trunc( 100 * (this.props.tftWins / (this.props.tftLosses + this.props.tftWins) ) ) }%) </p>
-                                <p>{this.props.tftLP} LP</p>
-                            </div>
-                    
-                </div>
-
-                </div>
-
-                <div id="containerR">
-
-                    <div id="match-history-container">match history here</div>
-
-                </div>
-
-            </div>
-        );
-    }
-}
-
-
 const key = "?api_key=RGAPI-d2bfc955-9ed1-429d-bae5-dc7c0fc2dbaa"
 const lolVersion="9.13.1";
 const urlSummonerLookup = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"
@@ -75,82 +36,6 @@ let lolSummonerLevel,
     tftLosses,
     tftLP,
     slotCounter = 1;
-
-
-document.getElementById("search-button").addEventListener("click", function() {
-    on_search()
-});
-
-document.getElementById("goto-team-planner").addEventListener("click", function() {
-    open_team_planner()
-});
-
-
-
-
-
-
-async function on_search() {
-
-    let summonerName = document.getElementById("search-input").value;
-
-    await fetch(urlSummonerLookup + summonerName + key)
-        .then(resp => resp.json())
-        .then(data => {
-            lolAccount = data.accountId;
-            lolName = data.name;
-            lolProfileIcon =  urlProfileIcon + data.profileIconId + ".png";
-            lolSummonerLevel = data.summonerLevel;
-            lolSummonerID = data.id;
-            lolSummonerName = data.name;
-        });
-
-    await fetch(urlRank + lolSummonerID + key)
-        .then(resp => resp.json())
-        .then(data => {
-            //TFT
-            let queueType = "RANKED_TFT";
-            let queueNum = data.length - 1;
-            let queueFinal;
-            if (data[queueNum].queueType === queueType) {
-                queueFinal = queueNum;
-            } else if (data[queueNum - 1].queueType === queueType) {
-                queueFinal = queueNum - 1;
-            } else if (data[queueNum - 2].queueType === queueType) {
-                queueFinal = queueNum - 2;
-            } else if (data[queueNum - 3].queueType === queueType) {
-                queueFinal = queueNum - 3;
-            }
-            lolTFTTier = get_emblem(data[queueFinal].tier);
-            tftRank = data[queueFinal].tier + " " + data[queueFinal].rank;
-            tftWins = data[queueFinal].wins;
-            tftLosses = data[queueFinal].losses;
-            tftLP = data[queueFinal].leaguePoints;
-        });
-
-    await ReactDOM.render(<SummonerSearch 
-        summoner={lolSummonerName} profileIcon={lolProfileIcon} level={lolSummonerLevel} 
-        tftTier={lolTFTTier} tftRank={tftRank} tftWins={tftWins} tftLosses={tftLosses} tftLP={tftLP}
-        slotCounter={slotCounter}
-        />, document.getElementById("root"));
-
-        
-}
-
-
-function get_emblem(rankEmblem) {
-    switch(rankEmblem) {
-    case "IRON": return emblemIron; break;
-    case "BRONZE": return emblemBronze; break;
-    case "SILVER": return emblemSilver; break;
-    case "GOLD": return emblemGold; break;
-    case "PLATINUM": return emblemPlatinum; break;
-    case "DIAMOND": return emblemDiamond; break;
-    case "MASTER": return emblemMaster; break;
-    case "GRANDMASTER": return emblemGrandmaster; break;
-    case "CHALLENGER": return emblemChallenger; break;
-    }
-}
 
 let check_fill = 0;
 
@@ -202,9 +87,115 @@ let num_glacial=0,
     num_wild=0,
     num_yordle=0;  
 
+class SummonerSearch extends React.Component {
+    render() {
+        return (
+
+            <div id="content-container">
+
+                <div id="containerL">
+                
+                    <div id="profile-container">
+                        <img id="profile-icon" src={this.props.profileIcon} ></img>
+                        <div id="profile-level"><em>Level {this.props.level}</em></div>
+                        <h2 id="profile-name">{this.props.summoner}</h2>
+                    </div>
+                    
+                    <div id="ranks-container">
+                            <img id="rank-tier" src={this.props.tftTier}></img>
+                            <div id="rank-rank">
+                                <h2>{this.props.tftRank}</h2>
+                                <p>{this.props.tftWins}W - {this.props.tftLosses}L ({ Math.trunc( 100 * (this.props.tftWins / (this.props.tftLosses + this.props.tftWins) ) ) }%) </p>
+                                <p>{this.props.tftLP} LP</p>
+                            </div>
+                    </div>
+
+                </div>
+
+                <div id="containerR">
+
+                    <div id="match-history-container">match history here</div>
+
+                </div>
+
+            </div>
+        );
+    }
+}
+
+document.getElementById("search-button").addEventListener("click", function() {
+    on_search()
+});
+
+document.getElementById("goto-team-planner").addEventListener("click", function() {
+    open_team_planner()
+});
+
+async function on_search() {
+
+    let summonerName = document.getElementById("search-input").value;
+
+    await fetch(urlSummonerLookup + summonerName + key)
+        .then(resp => resp.json())
+        .then(data => {
+            lolAccount = data.accountId;
+            lolName = data.name;
+            lolProfileIcon =  urlProfileIcon + data.profileIconId + ".png";
+            lolSummonerLevel = data.summonerLevel;
+            lolSummonerID = data.id;
+            lolSummonerName = data.name;
+        });
+
+    await fetch(urlRank + lolSummonerID + key)
+        .then(resp => resp.json())
+        .then(data => {
+            //TFT
+            let queueType = "RANKED_TFT";
+            let queueNum = data.length - 1;
+            let queueFinal;
+            if (data[queueNum].queueType === queueType) {
+                queueFinal = queueNum;
+            } else if (data[queueNum - 1].queueType === queueType) {
+                queueFinal = queueNum - 1;
+            } else if (data[queueNum - 2].queueType === queueType) {
+                queueFinal = queueNum - 2;
+            } else if (data[queueNum - 3].queueType === queueType) {
+                queueFinal = queueNum - 3;
+            }
+            lolTFTTier = get_emblem(data[queueFinal].tier);
+            tftRank = data[queueFinal].tier + " " + data[queueFinal].rank;
+            tftWins = data[queueFinal].wins;
+            tftLosses = data[queueFinal].losses;
+            tftLP = data[queueFinal].leaguePoints;
+        });
+
+    await ReactDOM.render(<SummonerSearch 
+        summoner={lolSummonerName} profileIcon={lolProfileIcon} level={lolSummonerLevel} 
+        tftTier={lolTFTTier} tftRank={tftRank} tftWins={tftWins} tftLosses={tftLosses} tftLP={tftLP}
+        slotCounter={slotCounter}
+        />, document.getElementById("root"));
+
+}
+
+function get_emblem(rankEmblem) {
+    switch(rankEmblem) {
+    case "IRON": return emblemIron; break;
+    case "BRONZE": return emblemBronze; break;
+    case "SILVER": return emblemSilver; break;
+    case "GOLD": return emblemGold; break;
+    case "PLATINUM": return emblemPlatinum; break;
+    case "DIAMOND": return emblemDiamond; break;
+    case "MASTER": return emblemMaster; break;
+    case "GRANDMASTER": return emblemGrandmaster; break;
+    case "CHALLENGER": return emblemChallenger; break;
+    }
+}
+
 function add_champion(url, num) {
     let champ_url = url;
+    let champ_container = document.createElement("div");
     let added_champ = document.createElement("img");
+    champ_container.appendChild(added_champ);
     added_champ.src = champ_url;
     get_type(champion_array[num].type);
     get_type(champion_array[num].type2);
@@ -303,7 +294,174 @@ function add_champion(url, num) {
         document.getElementById("yordleType").getElementsByTagName("span")[0].innerHTML = num_yordle;
     }
 
-    document.getElementById("selected-champion-list").appendChild(added_champ);
+    let delete_champ = document.createElement("div");
+    delete_champ.innerHTML = "<strong>-</strong>";
+    delete_champ.addEventListener('click', function() {
+        champ_container.style.display = "none";
+        if (champion_array[num].type === "Glacial" || champion_array[num].type2 === "Glacial" || champion_array[num].type3 === "Glacial") {
+            num_glacial--;
+            if (num_glacial === 0) {
+                document.getElementById("glacialType").style.display = "none";
+            }
+            document.getElementById("glacialType").getElementsByTagName("span")[0].innerHTML = num_glacial;
+        }
+        if (champion_array[num].type === "Ranger" || champion_array[num].type2 === "Ranger" || champion_array[num].type3 === "Ranger") {
+            num_ranger--;
+            if (num_ranger === 0) {
+                document.getElementById("rangerType").style.display = "none";
+            }
+            document.getElementById("rangerType").getElementsByTagName("span")[0].innerHTML = num_ranger;
+        }
+        if (champion_array[num].type === "Assassin" || champion_array[num].type2 === "Assassin" || champion_array[num].type3 === "Assassin") {
+            num_assassin--;
+            if (num_assassin === 0) {
+                document.getElementById("assassinType").style.display = "none";
+            }            
+            document.getElementById("assassinType").getElementsByTagName("span")[0].innerHTML = num_assassin;
+        }
+        if (champion_array[num].type === "Blademaster" || champion_array[num].type2 === "Blademaster" || champion_array[num].type3 === "Blademaster") {
+            num_blademaster--;
+            if (num_blademaster === 0) {
+                document.getElementById("blademasterType").style.display = "none";
+            }
+            document.getElementById("blademasterType").getElementsByTagName("span")[0].innerHTML = num_blademaster;
+        }
+        if (champion_array[num].type === "Brawler" || champion_array[num].type2 === "Brawler" || champion_array[num].type3 === "Brawler") {
+            num_brawler--;
+            if (num_brawler === 0) {
+                document.getElementById("brawlerType").style.display = "none";
+            }
+            document.getElementById("brawlerType").getElementsByTagName("span")[0].innerHTML = num_brawler;
+        }
+        if (champion_array[num].type === "Elementalist" || champion_array[num].type2 === "Elementalist" || champion_array[num].type3 === "Elementalist") {
+            num_elementalist--;
+            if (num_elementalist === 0) {
+                document.getElementById("elementalistType").style.display = "none";
+            }
+            document.getElementById("elementalistType").getElementsByTagName("span")[0].innerHTML = num_elementalist;
+        }
+        if (champion_array[num].type === "Guardian" || champion_array[num].type2 === "Guardian" || champion_array[num].type3 === "Guardian") {
+            num_guardian--;
+            if (num_guardian === 0) {
+                document.getElementById("guardianType").style.display = "none";
+            }
+            document.getElementById("guardianType").getElementsByTagName("span")[0].innerHTML = num_guardian;
+        }
+        if (champion_array[num].type === "Gunslinger" || champion_array[num].type2 === "Gunslinger" || champion_array[num].type3 === "Gunslinger") {
+            num_gunslinger--;
+            if (num_gunslinger === 0) {
+                document.getElementById("gunslingerType").style.display = "none";
+            }
+            document.getElementById("gunslingerType").getElementsByTagName("span")[0].innerHTML = num_gunslinger;
+        }
+        if (champion_array[num].type === "Knight" || champion_array[num].type2 === "Knight" || champion_array[num].type3 === "Knight") {
+            num_knight--;
+            if (num_knight === 0) {
+                document.getElementById("knightType").style.display = "none";
+            }
+            document.getElementById("knightType").getElementsByTagName("span")[0].innerHTML = num_knight;
+        }
+        if (champion_array[num].type === "Shapeshifter" || champion_array[num].type2 === "Shapeshifter" || champion_array[num].type3 === "Shapeshifter") {
+            num_shapeshifter--;
+            if (num_shapeshifter === 0) {
+                document.getElementById("shapeshifterType").style.display = "none";
+            }
+            document.getElementById("shapeshifterType").getElementsByTagName("span")[0].innerHTML = num_shapeshifter;
+        }
+        if (champion_array[num].type === "Sorcerer" || champion_array[num].type2 === "Sorcerer" || champion_array[num].type3 === "Sorcerer") {
+            num_sorcerer--;
+            if (num_sorcerer === 0) {
+                document.getElementById("sorcererType").style.display = "none";
+            }
+            document.getElementById("sorcererType").getElementsByTagName("span")[0].innerHTML = num_sorcerer;
+        }
+        if (champion_array[num].type === "Demon" || champion_array[num].type2 === "Demon" || champion_array[num].type3 === "Demon") {
+            num_demon--;
+            if (num_demon === 0) {
+                document.getElementById("demonType").style.display = "none";
+            }
+            document.getElementById("demonType").getElementsByTagName("span")[0].innerHTML = num_demon;
+        }
+        if (champion_array[num].type === "Dragon" || champion_array[num].type2 === "Dragon" || champion_array[num].type3 === "Dragon") {
+            num_dragon--;
+            if (num_dragon === 0) {
+                document.getElementById("dragonType").style.display = "none";
+            }
+            document.getElementById("dragonType").getElementsByTagName("span")[0].innerHTML = num_dragon;
+        }
+        if (champion_array[num].type === "Exile" || champion_array[num].type2 === "Exile" || champion_array[num].type3 === "Exile") {
+            num_exile--;
+            if (num_exile === 0) {
+                document.getElementById("exileType").style.display = "none";
+            }
+            document.getElementById("exileType").getElementsByTagName("span")[0].innerHTML = num_exile;
+        }
+        if (champion_array[num].type === "Imperial" || champion_array[num].type2 === "Imperial" || champion_array[num].type3 === "Imperial") {
+            num_imperial--;
+            if (num_imperial === 0) {
+                document.getElementById("imperialType").style.display = "none";
+            }
+            document.getElementById("imperialType").getElementsByTagName("span")[0].innerHTML = num_imperial;
+        }
+        if (champion_array[num].type === "Noble" || champion_array[num].type2 === "Noble" || champion_array[num].type3 === "Noble") {
+            num_noble--;
+            if (num_noble === 0) {
+                document.getElementById("nobleType").style.display = "none";
+            }
+            document.getElementById("nobleType").getElementsByTagName("span")[0].innerHTML = num_noble;
+        }
+        if (champion_array[num].type === "Ninja" || champion_array[num].type2 === "Ninja" || champion_array[num].type3 === "Ninja") {
+            num_ninja--;
+            if (num_ninja === 0) {
+                document.getElementById("ninjaType").style.display = "none";
+            }
+            document.getElementById("ninjaType").getElementsByTagName("span")[0].innerHTML = num_ninja;
+        }
+        if (champion_array[num].type === "Phantom" || champion_array[num].type2 === "Phantom" || champion_array[num].type3 === "Phantom") {
+            num_phantom--;
+            if (num_phantom === 0) {
+                document.getElementById("phantomType").style.display = "none";
+            }
+            document.getElementById("phantomType").getElementsByTagName("span")[0].innerHTML = num_phantom;
+        }
+        if (champion_array[num].type === "Pirate" || champion_array[num].type2 === "Pirate" || champion_array[num].type3 === "Pirate") {
+            num_pirate--;
+            if (num_pirate === 0) {
+                document.getElementById("pirateType").style.display = "none";
+            }
+            document.getElementById("pirateType").getElementsByTagName("span")[0].innerHTML = num_pirate;
+        }
+        if (champion_array[num].type === "Robot" || champion_array[num].type2 === "Robot" || champion_array[num].type3 === "Robot") {
+            num_robot--;
+            if (num_robot === 0) {
+                document.getElementById("robotType").style.display = "none";
+            }
+            document.getElementById("robotType").getElementsByTagName("span")[0].innerHTML = num_robot;
+        }
+        if (champion_array[num].type === "Void" || champion_array[num].type2 === "Void" || champion_array[num].type3 === "Void") {
+            num_void--;
+            if (num_void === 0) {
+                document.getElementById("voidType").style.display = "none";
+            }
+            document.getElementById("voidType").getElementsByTagName("span")[0].innerHTML = num_void;
+        }
+        if (champion_array[num].type === "Wild" || champion_array[num].type2 === "Wild" || champion_array[num].type3 === "Wild") {
+            num_wild--;
+            if (num_wild === 0) {
+                document.getElementById("wildType").style.display = "none";
+            }
+            document.getElementById("wildType").getElementsByTagName("span")[0].innerHTML = num_wild;
+        }
+        if (champion_array[num].type === "Yordle" || champion_array[num].type2 === "Yordle" || champion_array[num].type3 === "Yordle") {
+            num_yordle--;
+            if (num_yordle === 0) {
+                document.getElementById("yordleType").style.display = "none";
+            }
+            document.getElementById("yordleType").getElementsByTagName("span")[0].innerHTML = num_yordle;
+        }
+    });
+    champ_container.appendChild(delete_champ);
+    document.getElementById("selected-champion-list").appendChild(champ_container);
 
 }
 
@@ -336,7 +494,6 @@ function get_type(unit_type) {
     }
 }
 
-
 class TeamPlanner extends React.Component {
 
     fill_modal_champions = () => {
@@ -352,7 +509,10 @@ class TeamPlanner extends React.Component {
                 champ_icon.addEventListener('click', function () {
                     add_champion(url_icon, champ_num);
                 });
-                let test1 = this.champPool = React.createRef();
+                champ_icon.addEventListener('click', function () {
+                    document.getElementById("modal").style.display = "none";
+                    document.getElementById("modal-overlay").style.display = "none";
+                });
                 document.getElementById("modal").appendChild(champ_icon);
                 check_fill++;
             }
@@ -364,8 +524,6 @@ class TeamPlanner extends React.Component {
         document.getElementById("modal-overlay").style.display = "none";
     }
     
-
-
     render() {
 
         return (
@@ -382,7 +540,7 @@ class TeamPlanner extends React.Component {
 
                         <button id="add-champ-button" onClick={this.fill_modal_champions}><strong>+</strong></button>
                         
-                        <div id="modal-overlay"></div>
+                        <div onClick={this.close_modal} id="modal-overlay"></div>
                         <div id="modal">
                             <h1>Select a Champion</h1>
                             <div onClick={this.close_modal} id="modal-quit">X</div>
@@ -583,9 +741,7 @@ class TeamPlanner extends React.Component {
                                     <span id="num-of-type">6</span> 60% Chance to Miss
                                 </div>
                             </div>
-                        </div>
-
-                        
+                        </div>                      
                     
                     </div>
 
@@ -599,36 +755,9 @@ class TeamPlanner extends React.Component {
 
 let champion_array = [{name: "Aatrox", type: "Demon", type2: "Blademaster", type3: "null"}, {name: "Ahri", type: "Wild", type2: "Sorcerer", type3: "null"}, {name: "Akali", type: "Ninja", type2: "Assassin", type3: "null"}, {name: "Anivia", type: "Glacial", type2: "Elementalist", type3: "null"}, {name: "Ashe", type: "Glacial", type2: "Ranger", type3: "null"}, {name: "AurelionSol", type: "Dragon", type2: "Sorcerer", type3: "null"}, {name: "Blitzcrank", type: "Robot", type2: "Brawler", type3: "null"}, {name: "Brand", type: "Demon", type2: "Elementalist", type3: "null"}, {name: "Braum", type: "Glacial", type2: "Guardian", type3: "null"}, {name: "Chogath", type: "Void", type2: "Brawler", type3: "null"}, {name: "Darius", type: "Imperial", type2: "Knight", type3: "null"}, {name: "Draven", type: "Imperial", type2: "Blademaster", type3: "null"}, {name: "Elise", type: "Demon", type2: "Shapeshifter", type3: "null"}, {name: "Evelynn", type: "Demon", type2: "Assassin", type3: "null"}, {name: "Fiora", type: "Noble", type2: "Blademaster", type3: "null"}, {name: "Gangplank", type: "Pirate", type2: "Gunslinger", type3: "Blademaster"}, {name: "Garen", type: "Noble", type2: "Knight", type3: "null"}, {name: "Gnar", type: "Wild", type2: "Yordle", type3: "Shapeshifter"}, {name: "Graves", type: "Pirate", type2: "Gunslinger", type3: "null"}, {name: "Karthus", type: "Phantom", type2: "Sorcerer", type3: "null"}, {name: "Kassadin", type: "Void", type2: "Sorcerer", type3: "null"}, {name: "Katarina", type: "Imperial", type2: "Assassin", type3: "null"}, {name: "Kayle", type: "Noble", type2: "Knight", type3: "null"}, {name: "Kennen", type: "Ninja", type2: "Yordle", type3: "Elementalist"}, {name: "Khazix", type: "Void", type2: "Assassin", type3: "null"}, {name: "Kindred", type: "Phantom", type2: "Ranger", type3: "null"}, {name: "Leona", type: "Noble", type2: "Guardian", type3: "null"}, {name: "Lissandra", type: "Glacial", type2: "Elementalist", type3: "null"}, {name: "Lucian", type: "Noble", type2: "Gunslinger", type3: "null"}, {name: "Lulu", type: "Yordle", type2: "Sorcerer", type3: "null"}, {name: "MissFortune", type: "Pirate", type2: "Gunslinger", type3: "null"}, {name: "Mordekaiser", type: "Phantom", type2: "Knight", type3: "null"}, {name: "Morgana", type: "Demon", type2: "Sorcerer", type3: "null"}, {name: "Nidalee", type: "Wild", type2: "Shapeshifter", type3: "null"}, {name: "Poppy", type: "Yordle", type2: "Knight", type3: "null"}, {name: "Pyke", type: "Pirate", type2: "Assassin", type3: "null"}, {name: "RekSai", type: "Void", type2: "Brawler", type3: "null"}, {name: "Rengar", type: "Wild", type2: "Assassin", type3: "null"}, {name: "Sejuani", type: "Glacial", type2: "Knight", type3: "null"}, {name: "Shen", type: "Ninja", type2: "Blademaster", type3: "null"}, {name: "Shyvana", type: "Dragon", type2: "Shapeshifter", type3: "null"}, {name: "Swain", type: "Imperial", type2: "Demon", type3: "Shapeshifter"}, {name: "Tristana", type: "Yordle", type2: "Gunslinger", type3: "null"}, {name: "TwistedFate", type: "Pirate", type2: "Sorcerer", type3: "null"}, {name: "Varus", type: "Demon", type2: "Ranger", type3: "null"}, {name: "Vayne", type: "Noble", type2: "Ranger", type3: "null"}, {name: "Veigar", type: "Yordle", type2: "Sorcerer", type3: "null"}, {name: "Volibear", type: "Glacial", type2: "Brawler", type3: "null"}, {name: "Warwick", type: "Wild", type2: "Brawler", type3: "null"}, {name: "Yasuo", type: "Exile", type2: "Blademaster", type3: "null"}, {name: "Zed", type: "Ninja", type2: "Assassin", type3: "null"},]
 
-const modalStyles = {
-    modal: {
-        backgroundColor: "rgb(32, 48, 48)",
-        color: "white"
-    }
-
-}
-
 function open_team_planner() {
     ReactDOM.render(<TeamPlanner />, document.getElementById("root"));
 }
-
-function select_ashe() {
-
-}
-
-
-function select_champion() {
-    let champ_container = <div id="champ-container">test</div>
-
-}
-
-
-
-
-
-
-
-
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

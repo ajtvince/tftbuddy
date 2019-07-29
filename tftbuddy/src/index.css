@@ -144,13 +144,28 @@
   border: 2px whitesmoke solid;
   border-radius:80px;
 }
+#selected-champion-list div {
+  display:inline-block;
+}
 #selected-champion-list img {
   width:80px;
   height:80px;
   margin:4px;
   border: 4px black solid;
   border-radius:80px;
-  display:inline-block;
+  position: relative;
+}
+#selected-champion-list > div > div {
+  position:absolute;
+  width:30px;
+  height:30px;
+  background-color:red;
+  border-radius:30px;
+  text-align:center;
+  line-height: 15px;
+  transform:translateX(-30px);
+  color:white;
+  font-size:50px;
 }
 
 /* Modal Box Champion Pool */
