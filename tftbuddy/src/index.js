@@ -191,10 +191,20 @@ function get_emblem(rankEmblem) {
     }
 }
 
+let current_champ = "";
+
 function add_champion(url, num) {
     let champ_url = url;
     let champ_container = document.createElement("div");
     let added_champ = document.createElement("img");
+    let current_champ_split = champ_url.split(urlChampIcon);
+    if (current_champ.search(current_champ_split) != -1) {
+        console.log("duplicate");
+    } else {
+        current_champ += current_champ_split;
+        console.log("new");
+    }
+    console.log(current_champ);
     champ_container.appendChild(added_champ);
     added_champ.src = champ_url;
     get_type(champion_array[num].type);
@@ -204,94 +214,346 @@ function add_champion(url, num) {
     if (champion_array[num].type === "Glacial" || champion_array[num].type2 === "Glacial" || champion_array[num].type3 === "Glacial") {
         document.getElementById("glacialType").style.display = "inline-block";
         document.getElementById("glacialType").getElementsByTagName("span")[0].innerHTML = num_glacial;
+        if (num_glacial >= 2) {
+            document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
+        }
+        if (num_glacial >= 4) {
+            document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
+        }
+        if (num_glacial >= 6) {
+            document.getElementById("glacialInfo").getElementsByTagName("p")[2].style.color = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[2].style.borderRightColor = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Ranger" || champion_array[num].type2 === "Ranger" || champion_array[num].type3 === "Ranger") {
         document.getElementById("rangerType").style.display = "inline-block";
         document.getElementById("rangerType").getElementsByTagName("span")[0].innerHTML = num_ranger;
+        if (num_ranger >= 2) {
+            document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_ranger >= 4) {
+            document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Assassin" || champion_array[num].type2 === "Assassin" || champion_array[num].type3 === "Assassin") {
         document.getElementById("assassinType").style.display = "inline-block";
         document.getElementById("assassinType").getElementsByTagName("span")[0].innerHTML = num_assassin;
+        if (num_assassin >= 1) {
+            document.getElementById("assassinInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("assassinInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("assassinInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("assassinInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_assassin >= 4) {
+            document.getElementById("assassinInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("assassinInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("assassinInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("assassinInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Blademaster" || champion_array[num].type2 === "Blademaster" || champion_array[num].type3 === "Blademaster") {
         document.getElementById("blademasterType").style.display = "inline-block";
         document.getElementById("blademasterType").getElementsByTagName("span")[0].innerHTML = num_blademaster;
+        if (num_blademaster >= 3) {
+            document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_blademaster >= 6) {
+            document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Brawler" || champion_array[num].type2 === "Brawler" || champion_array[num].type3 === "Brawler") {
         document.getElementById("brawlerType").style.display = "inline-block";
         document.getElementById("brawlerType").getElementsByTagName("span")[0].innerHTML = num_brawler;
+        if (num_brawler >= 2) {
+            document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("brawlerInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_brawler >= 4) {
+            document.getElementById("brawlerInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Elementalist" || champion_array[num].type2 === "Elementalist" || champion_array[num].type3 === "Elementalist") {
         document.getElementById("elementalistType").style.display = "inline-block";
         document.getElementById("elementalistType").getElementsByTagName("span")[0].innerHTML = num_elementalist;
+        if (num_elementalist >= 3) {
+            document.getElementById("elementalistInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("elementalistInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+        }
     }
     if (champion_array[num].type === "Guardian" || champion_array[num].type2 === "Guardian" || champion_array[num].type3 === "Guardian") {
         document.getElementById("guardianType").style.display = "inline-block";
         document.getElementById("guardianType").getElementsByTagName("span")[0].innerHTML = num_guardian;
+        if (num_guardian >= 2) {
+            document.getElementById("guardianInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("guardianInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+        }
     }
     if (champion_array[num].type === "Gunslinger" || champion_array[num].type2 === "Gunslinger" || champion_array[num].type3 === "Gunslinger") {
         document.getElementById("gunslingerType").style.display = "inline-block";
         document.getElementById("gunslingerType").getElementsByTagName("span")[0].innerHTML = num_gunslinger;
+        if (num_gunslinger >= 3) {
+            document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("gunslingerInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_gunslinger >= 6) {
+            document.getElementById("gunslingerInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Knight" || champion_array[num].type2 === "Knight" || champion_array[num].type3 === "Knight") {
         document.getElementById("knightType").style.display = "inline-block";
         document.getElementById("knightType").getElementsByTagName("span")[0].innerHTML = num_knight;
+        if (num_knight >= 2) {
+            document.getElementById("knightInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("knightInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("knightInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("knightInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("knightInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("knightInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_knight >= 4) {
+            document.getElementById("knightInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("knightInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("knightInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("knightInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
+            document.getElementById("knightInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("knightInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
+        if (num_knight >= 6) {
+            document.getElementById("knightInfo").getElementsByTagName("p")[2].style.color = "red";
+            document.getElementById("knightInfo").getElementsByTagName("span")[2].style.borderRightColor = "red";
+            document.getElementById("knightInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("knightInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+            document.getElementById("knightInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("knightInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Shapeshifter" || champion_array[num].type2 === "Shapeshifter" || champion_array[num].type3 === "Shapeshifter") {
         document.getElementById("shapeshifterType").style.display = "inline-block";
         document.getElementById("shapeshifterType").getElementsByTagName("span")[0].innerHTML = num_shapeshifter;
+        if (num_shapeshifter >= 3) {
+            document.getElementById("shapeshifterInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("shapeshifterInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+        }
     }
     if (champion_array[num].type === "Sorcerer" || champion_array[num].type2 === "Sorcerer" || champion_array[num].type3 === "Sorcerer") {
         document.getElementById("sorcererType").style.display = "inline-block";
         document.getElementById("sorcererType").getElementsByTagName("span")[0].innerHTML = num_sorcerer;
+        if (num_sorcerer >= 3) {
+            document.getElementById("sorcererInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("sorcererInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("sorcererInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("sorcererInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_sorcerer >= 6) {
+            document.getElementById("sorcererInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("sorcererInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("sorcererInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("sorcererInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Demon" || champion_array[num].type2 === "Demon" || champion_array[num].type3 === "Demon") {
         document.getElementById("demonType").style.display = "inline-block";
         document.getElementById("demonType").getElementsByTagName("span")[0].innerHTML = num_demon;
+        if (num_demon >= 2) {
+            document.getElementById("demonInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("demonInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("demonInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("demonInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("demonInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("demonInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_demon >= 4) {
+            document.getElementById("demonInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("demonInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("demonInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("demonInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
+            document.getElementById("demonInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("demonInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
+        if (num_demon >= 6) {
+            document.getElementById("demonInfo").getElementsByTagName("p")[2].style.color = "red";
+            document.getElementById("demonInfo").getElementsByTagName("span")[2].style.borderRightColor = "red";
+            document.getElementById("demonInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("demonInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+            document.getElementById("demonInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("demonInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Dragon" || champion_array[num].type2 === "Dragon" || champion_array[num].type3 === "Dragon") {
         document.getElementById("dragonType").style.display = "inline-block";
         document.getElementById("dragonType").getElementsByTagName("span")[0].innerHTML = num_dragon;
+        if (num_dragon >= 2) {
+            document.getElementById("dragonInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("dragonInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+        }
     }
     if (champion_array[num].type === "Exile" || champion_array[num].type2 === "Exile" || champion_array[num].type3 === "Exile") {
         document.getElementById("exileType").style.display = "inline-block";
         document.getElementById("exileType").getElementsByTagName("span")[0].innerHTML = num_exile;
+        if (num_exile >= 1) {
+            document.getElementById("exileInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("exileInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+        }
     }
     if (champion_array[num].type === "Imperial" || champion_array[num].type2 === "Imperial" || champion_array[num].type3 === "Imperial") {
         document.getElementById("imperialType").style.display = "inline-block";
         document.getElementById("imperialType").getElementsByTagName("span")[0].innerHTML = num_imperial;
+        if (num_imperial >= 2) {
+            document.getElementById("imperialInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("imperialInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("imperialInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("imperialInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_imperial >= 4) {
+            document.getElementById("imperialInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("imperialInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("imperialInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("imperialInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Noble" || champion_array[num].type2 === "Noble" || champion_array[num].type3 === "Noble") {
         document.getElementById("nobleType").style.display = "inline-block";
         document.getElementById("nobleType").getElementsByTagName("span")[0].innerHTML = num_noble;
+        if (num_noble >= 2) {
+            document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_noble >= 4) {
+            document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
+            document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
+        if (num_noble >= 6) {
+            document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "red";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderRightColor = "red";
+            document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+            document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Ninja" || champion_array[num].type2 === "Ninja" || champion_array[num].type3 === "Ninja") {
         document.getElementById("ninjaType").style.display = "inline-block";
         document.getElementById("ninjaType").getElementsByTagName("span")[0].innerHTML = num_ninja;
+        if (num_ninja === 1) {
+            document.getElementById("ninjaInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("ninjaInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("ninjaInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("ninjaInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_ninja >= 4) {
+            document.getElementById("ninjaInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("ninjaInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("ninjaInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("ninjaInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Phantom" || champion_array[num].type2 === "Phantom" || champion_array[num].type3 === "Phantom") {
         document.getElementById("phantomType").style.display = "inline-block";
         document.getElementById("phantomType").getElementsByTagName("span")[0].innerHTML = num_phantom;
+        if (num_phantom >= 2) {
+            document.getElementById("phantomInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("phantomInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+        }
     }
     if (champion_array[num].type === "Pirate" || champion_array[num].type2 === "Pirate" || champion_array[num].type3 === "Pirate") {
         document.getElementById("pirateType").style.display = "inline-block";
         document.getElementById("pirateType").getElementsByTagName("span")[0].innerHTML = num_pirate;
+        if (num_pirate >= 3) {
+            document.getElementById("pirateInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("pirateInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+        }
     }
     if (champion_array[num].type === "Robot" || champion_array[num].type2 === "Robot" || champion_array[num].type3 === "Robot") {
         document.getElementById("robotType").style.display = "inline-block";
         document.getElementById("robotType").getElementsByTagName("span")[0].innerHTML = num_robot;
+        if (num_robot >= 1) {
+            document.getElementById("robotInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("robotInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+        }
     }
     if (champion_array[num].type === "Void" || champion_array[num].type2 === "Void" || champion_array[num].type3 === "Void") {
         document.getElementById("voidType").style.display = "inline-block";
         document.getElementById("voidType").getElementsByTagName("span")[0].innerHTML = num_void;
+        if (num_void >= 3) {
+            document.getElementById("voidInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("voidInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+        }
     }
     if (champion_array[num].type === "Wild" || champion_array[num].type2 === "Wild" || champion_array[num].type3 === "Wild") {
         document.getElementById("wildType").style.display = "inline-block";
         document.getElementById("wildType").getElementsByTagName("span")[0].innerHTML = num_wild;
+        if (num_wild >= 2) {
+            document.getElementById("wildInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("wildInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("wildInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("wildInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_wild >= 4) {
+            document.getElementById("wildInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("wildInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("wildInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("wildInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
     if (champion_array[num].type === "Yordle" || champion_array[num].type2 === "Yordle" || champion_array[num].type3 === "Yordle") {
         document.getElementById("yordleType").style.display = "inline-block";
         document.getElementById("yordleType").getElementsByTagName("span")[0].innerHTML = num_yordle;
+        if (num_yordle >= 3) {
+            document.getElementById("yordleInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("yordleInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("yordleInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("yordleInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_yordle >= 6) {
+            document.getElementById("yordleInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("yordleInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("yordleInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("yordleInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
     }
 
     let delete_champ = document.createElement("div");
@@ -302,6 +564,38 @@ function add_champion(url, num) {
             num_glacial--;
             if (num_glacial === 0) {
                 document.getElementById("glacialType").style.display = "none";
+            }
+            if (num_glacial === 1) {
+                document.getElementById("glacialInfo").style.color = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+                console.log(num_glacial);
+            }
+            if (num_glacial === 3) {
+                document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+                console.log(num_glacial);
+            }
+            if (num_glacial === 5) {
+                document.getElementById("glacialInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+                console.log(num_glacial);
+            }
+            if (num_glacial >= 6) {
+                document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("p")[2].style.color = "red";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[2].style.borderColor = "red";
+                document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("glacialType").getElementsByTagName("span")[0].innerHTML = num_glacial;
         }
@@ -550,20 +844,20 @@ class TeamPlanner extends React.Component {
                             <div id="glacialType">
                                 <img alt="Glacial"></img>
                                 <div><span></span> / 6</div>
-                                <div>
+                                <div id="glacialInfo">
                                     Glacials have a chance to stun for 2s on hit.<br/>
-                                    <span id="num-of-type">2</span> 20% Chance to Stun<br/>
-                                    <span id="num-of-type">4</span> 30% Chance to Stun<br/>
-                                    <span id="num-of-type">6</span> 45% Chance to Stun<br/>
+                                    <p><span id="num-of-type">2</span> 20% Chance to Stun<br/></p>
+                                    <p><span id="num-of-type">4</span> 30% Chance to Stun<br/></p>
+                                    <p><span id="num-of-type">6</span> 45% Chance to Stun</p>
                                 </div>
                             </div>
                             <div id="rangerType">
                                 <img alt="Ranger"></img>
                                 <div><span></span> / 4</div>
-                                <div>
+                                <div id="rangerInfo">
                                     Rangers have a chance to double their Attack Speed on hit for the next 3s.<br/>
-                                    <span id="num-of-type">2</span> 25% Chance to Double Attack Speed<br/>
-                                    <span id="num-of-type">4</span> 65% Chance to Double Attack Speed
+                                    <p><span id="num-of-type">2</span> 25% Chance to Double Attack Speed<br/></p>
+                                    <p><span id="num-of-type">4</span> 65% Chance to Double Attack Speed</p>
                                 </div>
                             </div>
                             <div id="assassinType">
@@ -571,8 +865,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="assassinInfo">
                                     Innate: Assassins leap to the farthest enemy at the start of combat and deal additional Critical Strike Damage.<br/>
-                                    <span id="num-of-type">3</span> +125% Critical Strike Damage<br/>
-                                    <span id="num-of-type">6</span> +350% Critical Strike Damage
+                                    <p><span id="num-of-type">3</span> +125% Critical Strike Damage<br/></p>
+                                    <p><span id="num-of-type">6</span> +350% Critical Strike Damage</p>
                                 </div>
                             </div>
                             <div id="blademasterType">
@@ -580,8 +874,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="blademasterInfo">
                                     Blademasters have a 35% chance to strike additional times each attack.<br/>
-                                    <span id="num-of-type">3</span> One Additional Attack<br/>
-                                    <span id="num-of-type">6</span> Two Additional Attacks
+                                    <p><span id="num-of-type">3</span> One Additional Attack<br/></p>
+                                    <p><span id="num-of-type">6</span> Two Additional Attacks</p>
                                 </div>
                             </div>
                             <div id="brawlerType">
@@ -589,8 +883,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 4</div>
                                 <div id="brawlerInfo">
                                     All Brawlers gain bonus maximum health.<br/>
-                                    <span id="num-of-type">2</span> +300 Bonus Health<br/>
-                                    <span id="num-of-type">4</span> +700 Bonus Health
+                                    <p><span id="num-of-type">2</span> +300 Bonus Health<br/></p>
+                                    <p><span id="num-of-type">4</span> +700 Bonus Health</p>
                                 </div>
                             </div>
                             <div id="elementalistType">
@@ -598,14 +892,14 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 3</div>
                                 <div id="elementalistInfo">
                                     Innate: Elementalists gain double mana from attacks.<br/>
-                                    <span id="num-of-type">3</span> At the start of combat, summon a Golem with 2200 Health
+                                    <p><span id="num-of-type">3</span> At the start of combat, summon a Golem with 2200 Health</p>
                                 </div>
                             </div>
                             <div id="guardianType">
                                 <img alt="Guardian"></img>
                                 <div><span></span> / 2</div>
                                 <div id="guardianInfo">
-                                    <span id="num-of-type">2</span> At the start of combat, all Guardians and adjacent allies gain +40 Armor. This Armor can stack.
+                                    <p><span id="num-of-type">2</span> At the start of combat, all Guardians and adjacent allies gain +40 Armor. This Armor can stack.</p>
                                 </div>
                             </div>
                             <div id="gunslingerType">
@@ -613,8 +907,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="gunslingerInfo">
                                     Gunslingers have a 50% chance to fire additional attacks on other enemies.<br/>
-                                    <span id="num-of-type">3</span> One Additional Enemy<br/>
-                                    <span id="num-of-type">6</span> Two Additional Enemeies
+                                    <p><span id="num-of-type">3</span> One Additional Enemy<br/></p>
+                                    <p><span id="num-of-type">6</span> Two Additional Enemeies</p>
                                 </div>
                             </div>
                             <div id="knightType">
@@ -622,9 +916,9 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="knightInfo">
                                     Knights block damage from basic attacks.<br/>
-                                    <span id="num-of-type">2</span> 20 Damage Blocked<br/>
-                                    <span id="num-of-type">4</span> 40 Damage Blocked<br/>
-                                    <span id="num-of-type">6</span> 80 Damage Blocked
+                                    <p><span id="num-of-type">2</span> 20 Damage Blocked<br/></p>
+                                    <p><span id="num-of-type">4</span> 40 Damage Blocked<br/></p>
+                                    <p><span id="num-of-type">6</span> 80 Damage Blocked</p>
                                 </div>
                             </div>
                             <div id="shapeshifterType">
@@ -632,7 +926,7 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 3</div>
                                 <div id="shapeshifterInfo">
                                     Shapeshifters gain Bonus Maximum Health when they transform.<br/>
-                                    <span id="num-of-type">3</span> +60% Bonus Max Health 
+                                    <p><span id="num-of-type">3</span> +60% Bonus Max Health </p>
                                 </div>
                             </div>
                             <div id="sorcererType">
@@ -640,8 +934,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="sorcererInfo">
                                     Innate: Sorcerers gain double mana from attacking and All Allies have increased Spell Damage.<br/>
-                                    <span id="num-of-type">3</span> +45% Spell Damage<br/>
-                                    <span id="num-of-type">6</span> +100% Spell Damage
+                                    <p><span id="num-of-type">3</span> +45% Spell Damage<br/></p>
+                                    <p><span id="num-of-type">6</span> +100% Spell Damage</p>
                                 </div>
                             </div>
                             <div id="demonType">
@@ -649,23 +943,23 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="demonInfo">
                                     Attacks from Demons have a chance to burn enemy's mana and deal the additional True Damage based on mana burned.<br/>
-                                    <span id="num-of-type">2</span> 25% Chance on hit to Burn Mana<br/>
-                                    <span id="num-of-type">4</span> 50% Chance on hit to Burn Mana<br/>
-                                    <span id="num-of-type">6</span> 80% Chance on hit to Burn Mana
+                                    <p><span id="num-of-type">2</span> 25% Chance on hit to Burn Mana<br/></p>
+                                    <p><span id="num-of-type">4</span> 50% Chance on hit to Burn Mana<br/></p>
+                                    <p><span id="num-of-type">6</span> 80% Chance on hit to Burn Mana</p>
                                 </div>
                             </div>
                             <div id="dragonType">
                                 <img alt="Dragon"></img>
                                 <div><span></span> / 2</div>
                                 <div id="dragonInfo">
-                                    <span id="num-of-type">2</span> Dragons are immune to Magic Damage
+                                    <p><span id="num-of-type">2</span> Dragons are immune to Magic Damage</p>
                                 </div>
                             </div>
                             <div id="exileType">
                                 <img alt="Exile"></img>
                                 <div><span></span> / 1</div>
                                 <div id="exileInfo">
-                                    <span id="num-of-type">1</span> If an Exile has no adjacent allies at the start of combat, they gain a shield equal to 100% of their Max Health
+                                    <p><span id="num-of-type">1</span> If an Exile has no adjacent allies at the start of combat, they gain a shield equal to 100% of their Max Health</p>
                                 </div>
                             </div>
                             <div id="imperialType">
@@ -673,8 +967,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 4</div>
                                 <div id="imperialInfo">
                                     Imperials deal Double Damage.<br/>
-                                    <span id="num-of-type">2</span> One Random Imperial<br/>
-                                    <span id="num-of-type">4</span> All Imperials
+                                    <p><span id="num-of-type">2</span> One Random Imperial<br/></p>
+                                    <p><span id="num-of-type">4</span> All Imperials</p>
                                 </div>
                             </div>
                             <div id="nobleType">
@@ -682,8 +976,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="nobleInfo">
                                     Nobles gain +100 Armor and Heal 35 Health per attack.<br/>
-                                    <span id="num-of-type">3</span> One Random Ally<br/>
-                                    <span id="num-of-type">6</span> Ally Allies
+                                    <p><span id="num-of-type">3</span> One Random Ally<br/></p>
+                                    <p><span id="num-of-type">6</span> Ally Allies</p>
                                 </div>
                             </div>
                             <div id="ninjaType">
@@ -691,36 +985,36 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 4</div>
                                 <div id="ninjaInfo">
                                     The Ninja Trait is only active when you have exactly 1 or 4 Ninjas.<br/>
-                                    <span id="num-of-type">1</span> The Ninja gains +40% Attack Damage<br/>
-                                    <span id="num-of-type">4</span> All Ninjas gain +80% Attack Damage
+                                    <p><span id="num-of-type">1</span> The Ninja gains +40% Attack Damage<br/></p>
+                                    <p><span id="num-of-type">4</span> All Ninjas gain +80% Attack Damage</p>
                                 </div>
                             </div>
                             <div id="phantomType">
                                 <img alt="Phantom"></img>
                                 <div><span></span> / 2</div>
                                 <div id="phantomInfo">
-                                    <span id="num-of-type">2</span> Curse a random enemy at the start of combat, their Health is reduced to 100
+                                    <p><span id="num-of-type">2</span> Curse a random enemy at the start of combat, their Health is reduced to 100</p>
                                 </div>
                             </div>
                             <div id="pirateType">
                                 <img alt="Pirate"></img>
                                 <div><span></span> / 3</div>
                                 <div id="pirateInfo">
-                                    <span id="num-of-type">3</span> Earn up to 4 additional Gold after combat against another player 
+                                    <p><span id="num-of-type">3</span> Earn up to 4 additional Gold after combat against another player </p>
                                 </div>
                             </div>
                             <div id="robotType">
                                 <img alt="Robot"></img>
                                 <div><span></span> / 1</div>
                                 <div id="robotInfo">
-                                    <span id="num-of-type">1</span> Robots start combat at full mana
+                                    <p><span id="num-of-type">1</span> Robots start combat at full mana</p>
                                 </div>
                             </div>
                             <div id="voidType">
                                 <img alt="Void"></img>
                                 <div><span></span> / 3</div>
                                 <div id="voidInfo">
-                                    <span id="num-of-type">3</span> All basic attacks ignore 50% of the enemy's Armor
+                                    <p><span id="num-of-type">3</span> All basic attacks ignore 50% of the enemy's Armor</p>
                                 </div>
                             </div>
                             <div id="wildType">
@@ -728,8 +1022,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 4</div>
                                 <div id="wildInfo">
                                     Attacks generate stacks of Fury (stacks up to 5 times). Each stack of fury gives +10% Attack Speed.<br/>
-                                    <span id="num-of-type">2</span> Wild Allies Only<br/>
-                                    <span id="num-of-type">4</span> All Allies
+                                    <p><span id="num-of-type">2</span> Wild Allies Only<br/></p>
+                                    <p><span id="num-of-type">4</span> All Allies</p>
                                 </div>
                             </div>
                             <div id="yordleType">
@@ -737,8 +1031,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="yordleInfo">
                                     Attacks against Ally Yordles have a chance to miss.<br/>
-                                    <span id="num-of-type">3</span> 25% Chance to Miss<br/>
-                                    <span id="num-of-type">6</span> 60% Chance to Miss
+                                    <p><span id="num-of-type">3</span> 25% Chance to Miss<br/></p>
+                                    <p><span id="num-of-type">6</span> 60% Chance to Miss</p>
                                 </div>
                             </div>
                         </div>                      
