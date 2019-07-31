@@ -243,28 +243,28 @@ function add_champion(url, num) {
         document.getElementById("rangerType").style.display = "inline-block";
         document.getElementById("rangerType").getElementsByTagName("span")[0].innerHTML = num_ranger;
         if (num_ranger >= 2) {
-            document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "red";
-            document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
-            document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "white";
-            document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("rangerInfo").getElementsByTagName("p")[0].style.color = "red";
+            document.getElementById("rangerInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("rangerInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("rangerInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
         }
         if (num_ranger >= 4) {
-            document.getElementById("glacialInfo").getElementsByTagName("p")[1].style.color = "red";
-            document.getElementById("glacialInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
-            document.getElementById("glacialInfo").getElementsByTagName("p")[0].style.color = "white";
-            document.getElementById("glacialInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+            document.getElementById("rangerInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("rangerInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("rangerInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("rangerInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
         }
     }
     if (champion_array[num].type === "Assassin" || champion_array[num].type2 === "Assassin" || champion_array[num].type3 === "Assassin") {
         document.getElementById("assassinType").style.display = "inline-block";
         document.getElementById("assassinType").getElementsByTagName("span")[0].innerHTML = num_assassin;
-        if (num_assassin >= 1) {
+        if (num_assassin === 3) {
             document.getElementById("assassinInfo").getElementsByTagName("p")[0].style.color = "red";
             document.getElementById("assassinInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
             document.getElementById("assassinInfo").getElementsByTagName("p")[1].style.color = "white";
             document.getElementById("assassinInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
         }
-        if (num_assassin >= 4) {
+        if (num_assassin >= 6) {
             document.getElementById("assassinInfo").getElementsByTagName("p")[1].style.color = "red";
             document.getElementById("assassinInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
             document.getElementById("assassinInfo").getElementsByTagName("p")[0].style.color = "white";
@@ -484,6 +484,12 @@ function add_champion(url, num) {
             document.getElementById("ninjaInfo").getElementsByTagName("p")[1].style.color = "white";
             document.getElementById("ninjaInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
         }
+        if (num_ninja === 2 || num_ninja === 3) {
+            document.getElementById("ninjaInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("ninjaInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+            document.getElementById("ninjaInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("ninjaInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
         if (num_ninja >= 4) {
             document.getElementById("ninjaInfo").getElementsByTagName("p")[1].style.color = "red";
             document.getElementById("ninjaInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
@@ -604,13 +610,47 @@ function add_champion(url, num) {
             if (num_ranger === 0) {
                 document.getElementById("rangerType").style.display = "none";
             }
+            if (num_ranger === 1) {
+                document.getElementById("rangerInfo").style.color = "white";
+                document.getElementById("rangerInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("rangerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_ranger === 3) {
+                document.getElementById("rangerInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("rangerInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("rangerInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("rangerInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_ranger >= 4) {
+                document.getElementById("rangerInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("rangerInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("rangerInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("rangerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }   
             document.getElementById("rangerType").getElementsByTagName("span")[0].innerHTML = num_ranger;
         }
         if (champion_array[num].type === "Assassin" || champion_array[num].type2 === "Assassin" || champion_array[num].type3 === "Assassin") {
             num_assassin--;
             if (num_assassin === 0) {
                 document.getElementById("assassinType").style.display = "none";
-            }            
+            }
+            if (num_assassin === 2) {
+                document.getElementById("assassinInfo").style.color = "white";
+                document.getElementById("assassinInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("assassinInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_assassin === 5) {
+                document.getElementById("assassinInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("assassinInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("assassinInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("assassinInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_assassin >= 6) {
+                document.getElementById("assassinInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("assassinInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("assassinInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("assassinInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }        
             document.getElementById("assassinType").getElementsByTagName("span")[0].innerHTML = num_assassin;
         }
         if (champion_array[num].type === "Blademaster" || champion_array[num].type2 === "Blademaster" || champion_array[num].type3 === "Blademaster") {
@@ -618,12 +658,46 @@ function add_champion(url, num) {
             if (num_blademaster === 0) {
                 document.getElementById("blademasterType").style.display = "none";
             }
+            if (num_blademaster === 2) {
+                document.getElementById("blademasterInfo").style.color = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_blademaster === 5) {
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_blademaster >= 6) {
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
             document.getElementById("blademasterType").getElementsByTagName("span")[0].innerHTML = num_blademaster;
         }
         if (champion_array[num].type === "Brawler" || champion_array[num].type2 === "Brawler" || champion_array[num].type3 === "Brawler") {
             num_brawler--;
             if (num_brawler === 0) {
                 document.getElementById("brawlerType").style.display = "none";
+            }
+            if (num_brawler === 1) {
+                document.getElementById("brawlerInfo").style.color = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_brawler === 3) {
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_brawler >= 4) {
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("brawlerType").getElementsByTagName("span")[0].innerHTML = num_brawler;
         }
@@ -646,12 +720,58 @@ function add_champion(url, num) {
             if (num_gunslinger === 0) {
                 document.getElementById("gunslingerType").style.display = "none";
             }
+            if (num_gunslinger === 1) {
+                document.getElementById("gunslingerInfo").style.color = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_gunslinger === 3) {
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_gunslinger >= 4) {
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
             document.getElementById("gunslingerType").getElementsByTagName("span")[0].innerHTML = num_gunslinger;
         }
         if (champion_array[num].type === "Knight" || champion_array[num].type2 === "Knight" || champion_array[num].type3 === "Knight") {
             num_knight--;
             if (num_knight === 0) {
                 document.getElementById("knightType").style.display = "none";
+            }
+            if (num_knight === 1) {
+                document.getElementById("knightInfo").style.color = "white";
+                document.getElementById("knightInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("knightInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_knight === 3) {
+                document.getElementById("knightInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("knightInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("knightInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("knightInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("knightInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("knightInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_knight === 5) {
+                document.getElementById("knightInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("knightInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("knightInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("knightInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("knightInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("knightInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_knight >= 6) {
+                document.getElementById("knightInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("knightInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("knightInfo").getElementsByTagName("p")[2].style.color = "red";
+                document.getElementById("knightInfo").getElementsByTagName("span")[2].style.borderColor = "red";
+                document.getElementById("knightInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("knightInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("knightType").getElementsByTagName("span")[0].innerHTML = num_knight;
         }
@@ -673,6 +793,35 @@ function add_champion(url, num) {
             num_demon--;
             if (num_demon === 0) {
                 document.getElementById("demonType").style.display = "none";
+            }
+            if (num_demon === 1) {
+                document.getElementById("demonInfo").style.color = "white";
+                document.getElementById("demonInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("demonInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_demon === 3) {
+                document.getElementById("demonInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("demonInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("demonInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("demonInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("demonInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("demonInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_demon === 5) {
+                document.getElementById("demonInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("demonInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("demonInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("demonInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("demonInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("demonInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_demon >= 6) {
+                document.getElementById("demonInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("demonInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("demonInfo").getElementsByTagName("p")[2].style.color = "red";
+                document.getElementById("demonInfo").getElementsByTagName("span")[2].style.borderColor = "red";
+                document.getElementById("demonInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("demonInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("demonType").getElementsByTagName("span")[0].innerHTML = num_demon;
         }
@@ -702,12 +851,59 @@ function add_champion(url, num) {
             if (num_noble === 0) {
                 document.getElementById("nobleType").style.display = "none";
             }
+            if (num_noble === 1) {
+                document.getElementById("nobleInfo").style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_noble === 3) {
+                document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_noble === 5) {
+                document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_noble >= 6) {
+                document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "red";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderColor = "red";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
             document.getElementById("nobleType").getElementsByTagName("span")[0].innerHTML = num_noble;
         }
         if (champion_array[num].type === "Ninja" || champion_array[num].type2 === "Ninja" || champion_array[num].type3 === "Ninja") {
             num_ninja--;
             if (num_ninja === 0) {
                 document.getElementById("ninjaType").style.display = "none";
+                document.getElementById("ninjaInfo").style.color = "white";
+            }
+            if (num_ninja === 1) {
+                document.getElementById("ninjaInfo").style.color = "white";
+                document.getElementById("ninjaInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("ninjaInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_ninja === 3) {
+                document.getElementById("ninjaInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("ninjaInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("ninjaInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("ninjaInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_ninja >= 4) {
+                document.getElementById("ninjaInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("ninjaInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("ninjaInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("ninjaInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("ninjaType").getElementsByTagName("span")[0].innerHTML = num_ninja;
         }
@@ -744,12 +940,48 @@ function add_champion(url, num) {
             if (num_wild === 0) {
                 document.getElementById("wildType").style.display = "none";
             }
+            if (0 < num_wild < 2) {
+                document.getElementById("wildInfo").style.color = "white";
+                document.getElementById("wildInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("wildInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+                document.getElementById("wildInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("wildInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+            }
+            if (2 <= num_wild < 4) {
+                document.getElementById("wildInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("wildInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("wildInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("wildInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_wild >= 4) {
+                document.getElementById("wildInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("wildInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("wildInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("wildInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
             document.getElementById("wildType").getElementsByTagName("span")[0].innerHTML = num_wild;
         }
         if (champion_array[num].type === "Yordle" || champion_array[num].type2 === "Yordle" || champion_array[num].type3 === "Yordle") {
             num_yordle--;
             if (num_yordle === 0) {
                 document.getElementById("yordleType").style.display = "none";
+            }
+            if (0 < num_noble < 3) {
+                document.getElementById("nobleInfo").style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (3 <= num_noble < 6) {
+                document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_noble >= 6) {
+                document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("yordleType").getElementsByTagName("span")[0].innerHTML = num_yordle;
         }
