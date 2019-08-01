@@ -279,13 +279,26 @@ function add_champion(url, num) {
             document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
             document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "white";
             document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("blademasterInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("blademasterInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
         }
         if (num_blademaster >= 6) {
             document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "red";
             document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
             document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "white";
             document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+            document.getElementById("blademasterInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("blademasterInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
         }
+        if (num_blademaster >= 9) {
+            document.getElementById("blademasterInfo").getElementsByTagName("p")[2].style.color = "red";
+            document.getElementById("blademasterInfo").getElementsByTagName("span")[2].style.borderRightColor = "red";
+            document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
+        
     }
     if (champion_array[num].type === "Brawler" || champion_array[num].type2 === "Brawler" || champion_array[num].type3 === "Brawler") {
         document.getElementById("brawlerType").style.display = "inline-block";
@@ -295,10 +308,22 @@ function add_champion(url, num) {
             document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
             document.getElementById("brawlerInfo").getElementsByTagName("p")[1].style.color = "white";
             document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("brawlerInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("brawlerInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
         }
         if (num_brawler >= 4) {
             document.getElementById("brawlerInfo").getElementsByTagName("p")[1].style.color = "red";
             document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+            document.getElementById("brawlerInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("brawlerInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
+        }
+        if (num_brawler >= 6) {
+            document.getElementById("brawlerInfo").getElementsByTagName("p")[2].style.color = "red";
+            document.getElementById("brawlerInfo").getElementsByTagName("span")[2].style.borderRightColor = "red";
+            document.getElementById("brawlerInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
             document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "white";
             document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
         }
@@ -322,15 +347,27 @@ function add_champion(url, num) {
     if (champion_array[num].type === "Gunslinger" || champion_array[num].type2 === "Gunslinger" || champion_array[num].type3 === "Gunslinger") {
         document.getElementById("gunslingerType").style.display = "inline-block";
         document.getElementById("gunslingerType").getElementsByTagName("span")[0].innerHTML = num_gunslinger;
-        if (num_gunslinger >= 3) {
+        if (num_gunslinger >= 2) {
             document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "red";
             document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
             document.getElementById("gunslingerInfo").getElementsByTagName("p")[1].style.color = "white";
             document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+            document.getElementById("gunslingerInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("gunslingerInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
         }
-        if (num_gunslinger >= 6) {
+        if (num_gunslinger >= 4) {
             document.getElementById("gunslingerInfo").getElementsByTagName("p")[1].style.color = "red";
             document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("gunslingerInfo").getElementsByTagName("p")[2].style.color = "white";
+            document.getElementById("gunslingerInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
+            document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
+        }
+        if (num_gunslinger >= 6) {
+            document.getElementById("gunslingerInfo").getElementsByTagName("p")[2].style.color = "red";
+            document.getElementById("gunslingerInfo").getElementsByTagName("span")[2].style.borderRightColor = "red";
+            document.getElementById("gunslingerInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
             document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "white";
             document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
         }
@@ -369,6 +406,14 @@ function add_champion(url, num) {
         if (num_shapeshifter >= 3) {
             document.getElementById("shapeshifterInfo").getElementsByTagName("p")[0].style.color = "red";
             document.getElementById("shapeshifterInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
+            document.getElementById("shapeshifterInfo").getElementsByTagName("p")[1].style.color = "white";
+            document.getElementById("shapeshifterInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
+        }
+        if (num_shapeshifter >= 6) {
+            document.getElementById("shapeshifterInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("shapeshifterInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
+            document.getElementById("shapeshifterInfo").getElementsByTagName("p")[0].style.color = "white";
+            document.getElementById("shapeshifterInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
         }
     }
     if (champion_array[num].type === "Sorcerer" || champion_array[num].type2 === "Sorcerer" || champion_array[num].type3 === "Sorcerer") {
@@ -664,14 +709,26 @@ function add_champion(url, num) {
                 document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             if (num_blademaster === 5) {
-                document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "white";
-                document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderColor = "white";
                 document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "red";
                 document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderColor = "white";
             }
-            if (num_blademaster >= 6) {
+            if (num_blademaster === 8) {
                 document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "red";
                 document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_blademaster >= 9) {
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[2].style.color = "red";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[2].style.borderColor = "red";
+                document.getElementById("blademasterInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("blademasterInfo").getElementsByTagName("span")[1].style.borderColor = "white";
                 document.getElementById("blademasterInfo").getElementsByTagName("p")[0].style.color = "white";
                 document.getElementById("blademasterInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
@@ -692,10 +749,22 @@ function add_champion(url, num) {
                 document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderColor = "white";
                 document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "red";
                 document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[2].style.borderColor = "white";
             }
-            if (num_brawler >= 4) {
+            if (num_brawler === 5) {
                 document.getElementById("brawlerInfo").getElementsByTagName("p")[1].style.color = "red";
                 document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_brawler >= 6) {
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[2].style.color = "red";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[2].style.borderColor = "red";
+                document.getElementById("brawlerInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("brawlerInfo").getElementsByTagName("span")[1].style.borderColor = "white";
                 document.getElementById("brawlerInfo").getElementsByTagName("p")[0].style.color = "white";
                 document.getElementById("brawlerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
@@ -706,12 +775,20 @@ function add_champion(url, num) {
             if (num_elementalist === 0) {
                 document.getElementById("elementalistType").style.display = "none";
             }
+            if (num_elementalist === 2) {
+                document.getElementById("elementalistInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("elementalistInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
             document.getElementById("elementalistType").getElementsByTagName("span")[0].innerHTML = num_elementalist;
         }
         if (champion_array[num].type === "Guardian" || champion_array[num].type2 === "Guardian" || champion_array[num].type3 === "Guardian") {
             num_guardian--;
             if (num_guardian === 0) {
                 document.getElementById("guardianType").style.display = "none";
+            }
+            if (num_guardian === 2) {
+                document.getElementById("guardianInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("guardianInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("guardianType").getElementsByTagName("span")[0].innerHTML = num_guardian;
         }
@@ -730,10 +807,22 @@ function add_champion(url, num) {
                 document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderColor = "white";
                 document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "red";
                 document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[2].style.borderColor = "white";
             }
-            if (num_gunslinger >= 4) {
+            if (num_gunslinger === 5) {
                 document.getElementById("gunslingerInfo").getElementsByTagName("p")[1].style.color = "red";
                 document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[2].style.color = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+            }
+            if (num_gunslinger >= 6) {
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[2].style.color = "red";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[2].style.borderColor = "red";
+                document.getElementById("gunslingerInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("gunslingerInfo").getElementsByTagName("span")[1].style.borderColor = "white";
                 document.getElementById("gunslingerInfo").getElementsByTagName("p")[0].style.color = "white";
                 document.getElementById("gunslingerInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
@@ -780,12 +869,44 @@ function add_champion(url, num) {
             if (num_shapeshifter === 0) {
                 document.getElementById("shapeshifterType").style.display = "none";
             }
+            if (num_shapeshifter === 2) {
+                document.getElementById("shapeshifterInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("shapeshifterInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_shapeshifter === 5) {
+                document.getElementById("shapeshifterInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("shapeshifterInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+                document.getElementById("shapeshifterInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("shapeshifterInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+            }
+            if (num_shapeshifter >= 6) {
+                document.getElementById("shapeshifterInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("shapeshifterInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("shapeshifterInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("shapeshifterInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
             document.getElementById("shapeshifterType").getElementsByTagName("span")[0].innerHTML = num_shapeshifter;
         }
         if (champion_array[num].type === "Sorcerer" || champion_array[num].type2 === "Sorcerer" || champion_array[num].type3 === "Sorcerer") {
             num_sorcerer--;
             if (num_sorcerer === 0) {
                 document.getElementById("sorcererType").style.display = "none";
+            }
+            if (num_sorcerer === 2) {
+                document.getElementById("sorcererInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("sorcererInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_sorcerer === 5) {
+                document.getElementById("sorcererInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("sorcererInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+                document.getElementById("sorcererInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("sorcererInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+            }
+            if (num_sorcerer >= 6) {
+                document.getElementById("sorcererInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("sorcererInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("sorcererInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("sorcererInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("sorcererType").getElementsByTagName("span")[0].innerHTML = num_sorcerer;
         }
@@ -830,6 +951,10 @@ function add_champion(url, num) {
             if (num_dragon === 0) {
                 document.getElementById("dragonType").style.display = "none";
             }
+            if (num_dragon === 1) {
+                document.getElementById("dragonInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("dragonInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
             document.getElementById("dragonType").getElementsByTagName("span")[0].innerHTML = num_dragon;
         }
         if (champion_array[num].type === "Exile" || champion_array[num].type2 === "Exile" || champion_array[num].type3 === "Exile") {
@@ -843,6 +968,23 @@ function add_champion(url, num) {
             num_imperial--;
             if (num_imperial === 0) {
                 document.getElementById("imperialType").style.display = "none";
+            }
+            if (num_imperial === 1) {
+                document.getElementById("imperialInfo").style.color = "white";
+                document.getElementById("imperialInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("imperialInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
+            if (num_imperial === 3) {
+                document.getElementById("imperialInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("imperialInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("imperialInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("imperialInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            }
+            if (num_imperial >= 4) {
+                document.getElementById("imperialInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("imperialInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("imperialInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("imperialInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("imperialType").getElementsByTagName("span")[0].innerHTML = num_imperial;
         }
@@ -912,12 +1054,20 @@ function add_champion(url, num) {
             if (num_phantom === 0) {
                 document.getElementById("phantomType").style.display = "none";
             }
+            if (num_phantom === 1) {
+                document.getElementById("phantomInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("phantomInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
             document.getElementById("phantomType").getElementsByTagName("span")[0].innerHTML = num_phantom;
         }
         if (champion_array[num].type === "Pirate" || champion_array[num].type2 === "Pirate" || champion_array[num].type3 === "Pirate") {
             num_pirate--;
             if (num_pirate === 0) {
                 document.getElementById("pirateType").style.display = "none";
+            }
+            if (num_pirate === 2) {
+                document.getElementById("pirateInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("pirateInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("pirateType").getElementsByTagName("span")[0].innerHTML = num_pirate;
         }
@@ -933,6 +1083,10 @@ function add_champion(url, num) {
             if (num_void === 0) {
                 document.getElementById("voidType").style.display = "none";
             }
+            if (num_void === 2) {
+                document.getElementById("voidInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("voidInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            }
             document.getElementById("voidType").getElementsByTagName("span")[0].innerHTML = num_void;
         }
         if (champion_array[num].type === "Wild" || champion_array[num].type2 === "Wild" || champion_array[num].type3 === "Wild") {
@@ -940,14 +1094,14 @@ function add_champion(url, num) {
             if (num_wild === 0) {
                 document.getElementById("wildType").style.display = "none";
             }
-            if (0 < num_wild < 2) {
+            if (num_wild === 1) {
                 document.getElementById("wildInfo").style.color = "white";
                 document.getElementById("wildInfo").getElementsByTagName("p")[0].style.color = "white";
                 document.getElementById("wildInfo").getElementsByTagName("span")[0].style.borderColor = "white";
                 document.getElementById("wildInfo").getElementsByTagName("p")[1].style.color = "white";
                 document.getElementById("wildInfo").getElementsByTagName("span")[1].style.borderColor = "white";
             }
-            if (2 <= num_wild < 4) {
+            if (num_wild === 3) {
                 document.getElementById("wildInfo").getElementsByTagName("p")[1].style.color = "white";
                 document.getElementById("wildInfo").getElementsByTagName("span")[1].style.borderColor = "white";
                 document.getElementById("wildInfo").getElementsByTagName("p")[0].style.color = "red";
@@ -966,22 +1120,24 @@ function add_champion(url, num) {
             if (num_yordle === 0) {
                 document.getElementById("yordleType").style.display = "none";
             }
-            if (0 < num_noble < 3) {
-                document.getElementById("nobleInfo").style.color = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            if (num_yordle === 2) {
+                document.getElementById("yordleInfo").style.color = "white";
+                document.getElementById("yordleInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("yordleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+                document.getElementById("yordleInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("yordleInfo").getElementsByTagName("span")[1].style.borderColor = "white";
             }
-            if (3 <= num_noble < 6) {
-                document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "red";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "red";
+            if (num_yordle === 5) {
+                document.getElementById("yordleInfo").getElementsByTagName("p")[1].style.color = "white";
+                document.getElementById("yordleInfo").getElementsByTagName("span")[1].style.borderColor = "white";
+                document.getElementById("yordleInfo").getElementsByTagName("p")[0].style.color = "red";
+                document.getElementById("yordleInfo").getElementsByTagName("span")[0].style.borderColor = "red";
             }
-            if (num_noble >= 6) {
-                document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "red";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "red";
-                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
+            if (num_yordle >= 6) {
+                document.getElementById("yordleInfo").getElementsByTagName("p")[1].style.color = "red";
+                document.getElementById("yordleInfo").getElementsByTagName("span")[1].style.borderColor = "red";
+                document.getElementById("yordleInfo").getElementsByTagName("p")[0].style.color = "white";
+                document.getElementById("yordleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
             document.getElementById("yordleType").getElementsByTagName("span")[0].innerHTML = num_yordle;
         }
@@ -1062,9 +1218,9 @@ class TeamPlanner extends React.Component {
 
                     <div id="champ-select-container">
 
-                        <div id="selected-champion-list"></div>
-
-                        <button id="add-champ-button" onClick={this.fill_modal_champions}><strong>+</strong></button>
+                        <div id="selected-champion-list">
+                            <button id="add-champ-button" onClick={this.fill_modal_champions}><strong>+</strong></button>
+                        </div>
                         
                         <div onClick={this.close_modal} id="modal-overlay"></div>
                         <div id="modal">
@@ -1105,9 +1261,10 @@ class TeamPlanner extends React.Component {
                                 <img alt="Blademaster"></img>
                                 <div><span></span> / 6</div>
                                 <div id="blademasterInfo">
-                                    Blademasters have a 35% chance to strike additional times each attack.<br/>
-                                    <p><span id="num-of-type">3</span> One Additional Attack<br/></p>
-                                    <p><span id="num-of-type">6</span> Two Additional Attacks</p>
+                                    Blademasters have a 35% chance to strike extra times each attack.<br/>
+                                    <p><span id="num-of-type">3</span> One Extra Attack<br/></p>
+                                    <p><span id="num-of-type">6</span> Two Extra Attacks</p>
+                                    <p><span id="num-of-type">9</span> Four Extra Attacks</p>
                                 </div>
                             </div>
                             <div id="brawlerType">
@@ -1116,7 +1273,8 @@ class TeamPlanner extends React.Component {
                                 <div id="brawlerInfo">
                                     All Brawlers gain bonus maximum health.<br/>
                                     <p><span id="num-of-type">2</span> +300 Bonus Health<br/></p>
-                                    <p><span id="num-of-type">4</span> +700 Bonus Health</p>
+                                    <p><span id="num-of-type">4</span> +700 Bonus Health<br/></p>
+                                    <p><span id="num-of-type">6</span> +1200 Bonus Health</p>
                                 </div>
                             </div>
                             <div id="elementalistType">
@@ -1131,7 +1289,7 @@ class TeamPlanner extends React.Component {
                                 <img alt="Guardian"></img>
                                 <div><span></span> / 2</div>
                                 <div id="guardianInfo">
-                                    <p><span id="num-of-type">2</span> At the start of combat, all Guardians and adjacent allies gain +40 Armor. This Armor can stack.</p>
+                                    <p><span id="num-of-type">2</span> At the start of combat, all Guardians and adjacent allies gain +50 Armor. This Armor can stack. This Armor does not apply to adjacent Guardians</p>
                                 </div>
                             </div>
                             <div id="gunslingerType">
@@ -1139,18 +1297,19 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="gunslingerInfo">
                                     Gunslingers have a 50% chance to fire additional attacks on other enemies.<br/>
-                                    <p><span id="num-of-type">3</span> One Additional Enemy<br/></p>
-                                    <p><span id="num-of-type">6</span> Two Additional Enemeies</p>
+                                    <p><span id="num-of-type">2</span> One Additional Enemy<br/></p>
+                                    <p><span id="num-of-type">4</span> Two Additional Enemeies<br/></p>
+                                    <p><span id="num-of-type">6</span> Three Additional Enemeies</p>
                                 </div>
                             </div>
                             <div id="knightType">
                                 <img alt="Knight"></img>
                                 <div><span></span> / 6</div>
                                 <div id="knightInfo">
-                                    Knights block damage from basic attacks.<br/>
-                                    <p><span id="num-of-type">2</span> 20 Damage Blocked<br/></p>
-                                    <p><span id="num-of-type">4</span> 40 Damage Blocked<br/></p>
-                                    <p><span id="num-of-type">6</span> 80 Damage Blocked</p>
+                                    Knights and their allies block damage from basic attacks.<br/>
+                                    <p><span id="num-of-type">2</span> Knights Block 20 Damage - Allies Block 15 Damage<br/></p>
+                                    <p><span id="num-of-type">4</span> Knights Block 40 Damage - Allies Block 30 Damage<br/></p>
+                                    <p><span id="num-of-type">6</span> Knights Block 80 Damage - Allies Block 55 Damage</p>
                                 </div>
                             </div>
                             <div id="shapeshifterType">
@@ -1158,7 +1317,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 3</div>
                                 <div id="shapeshifterInfo">
                                     Shapeshifters gain Bonus Maximum Health when they transform.<br/>
-                                    <p><span id="num-of-type">3</span> +60% Bonus Max Health </p>
+                                    <p><span id="num-of-type">3</span> +60% Bonus Max Health <br/></p>
+                                    <p><span id="num-of-type">3</span> +120% Bonus Max Health </p>
                                 </div>
                             </div>
                             <div id="sorcererType">
@@ -1175,16 +1335,16 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="demonInfo">
                                     Attacks from Demons have a chance to burn enemy's mana and deal the additional True Damage based on mana burned.<br/>
-                                    <p><span id="num-of-type">2</span> 25% Chance on hit to Burn Mana<br/></p>
-                                    <p><span id="num-of-type">4</span> 50% Chance on hit to Burn Mana<br/></p>
-                                    <p><span id="num-of-type">6</span> 80% Chance on hit to Burn Mana</p>
+                                    <p><span id="num-of-type">2</span> 20% Chance on hit to Burn Mana<br/></p>
+                                    <p><span id="num-of-type">4</span> 35% Chance on hit to Burn Mana<br/></p>
+                                    <p><span id="num-of-type">6</span> 60% Chance on hit to Burn Mana</p>
                                 </div>
                             </div>
                             <div id="dragonType">
                                 <img alt="Dragon"></img>
                                 <div><span></span> / 2</div>
                                 <div id="dragonInfo">
-                                    <p><span id="num-of-type">2</span> Dragons are immune to Magic Damage</p>
+                                    <p><span id="num-of-type">2</span> Dragons gain 83% Magic Damage Immunity</p>
                                 </div>
                             </div>
                             <div id="exileType">
@@ -1207,7 +1367,7 @@ class TeamPlanner extends React.Component {
                                 <img alt="Noble"></img>
                                 <div><span></span> / 6</div>
                                 <div id="nobleInfo">
-                                    Nobles gain +100 Armor and Heal 35 Health per attack.<br/>
+                                    Nobles gain +60 Armor & Magic Resist and Heal 35 Health per attack.<br/>
                                     <p><span id="num-of-type">3</span> One Random Ally<br/></p>
                                     <p><span id="num-of-type">6</span> Ally Allies</p>
                                 </div>
@@ -1217,8 +1377,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 4</div>
                                 <div id="ninjaInfo">
                                     The Ninja Trait is only active when you have exactly 1 or 4 Ninjas.<br/>
-                                    <p><span id="num-of-type">1</span> The Ninja gains +40% Attack Damage<br/></p>
-                                    <p><span id="num-of-type">4</span> All Ninjas gain +80% Attack Damage</p>
+                                    <p><span id="num-of-type">1</span> The Ninja gains +40 Attack Damage & Ability Power<br/></p>
+                                    <p><span id="num-of-type">4</span> All Ninjas gain +60 Attack Damage & Ability Power</p>
                                 </div>
                             </div>
                             <div id="phantomType">
@@ -1232,7 +1392,7 @@ class TeamPlanner extends React.Component {
                                 <img alt="Pirate"></img>
                                 <div><span></span> / 3</div>
                                 <div id="pirateInfo">
-                                    <p><span id="num-of-type">3</span> Earn up to 4 additional Gold after combat against another player </p>
+                                    <p><span id="num-of-type">3</span> Earn up to 4 additional Gold after combat against another player. Average 1.75 Gold.</p>
                                 </div>
                             </div>
                             <div id="robotType">
@@ -1246,7 +1406,7 @@ class TeamPlanner extends React.Component {
                                 <img alt="Void"></img>
                                 <div><span></span> / 3</div>
                                 <div id="voidInfo">
-                                    <p><span id="num-of-type">3</span> All basic attacks ignore 50% of the enemy's Armor</p>
+                                    <p><span id="num-of-type">3</span> Void units now deal True Damage</p>
                                 </div>
                             </div>
                             <div id="wildType">
@@ -1263,8 +1423,8 @@ class TeamPlanner extends React.Component {
                                 <div><span></span> / 6</div>
                                 <div id="yordleInfo">
                                     Attacks against Ally Yordles have a chance to miss.<br/>
-                                    <p><span id="num-of-type">3</span> 25% Chance to Miss<br/></p>
-                                    <p><span id="num-of-type">6</span> 60% Chance to Miss</p>
+                                    <p><span id="num-of-type">3</span> 35% Chance to Miss<br/></p>
+                                    <p><span id="num-of-type">6</span> 55% Chance to Miss</p>
                                 </div>
                             </div>
                         </div>                      

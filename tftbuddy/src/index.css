@@ -17,9 +17,10 @@
 #content-container {
   width:100%;
   max-width:1200px;
-  background-color:whitesmoke;
+  background-color:rgb(45, 60, 60);
   margin:auto;
   position:relative;
+  padding:1rem;
 }
 
 /* Site Navigation */
@@ -29,7 +30,7 @@
   width:100%;
   height:3rem;
   line-height:2.8rem;
-  background-color:whitesmoke;
+  background-color:darkslategrey;
   font-size:16px;
   text-align:center;
 }
@@ -116,14 +117,19 @@
 }
 
 /* Team Planner */
+#team-planner-container h1 {
+  color:whitesmoke;
+}
 #add-champ-button {
   height:80px;
   width:80px;
   border:none;
   border-radius:80px;
-  background-color:rgb(42, 58, 58);
-  color:white;
-  display:inline-block;
+  background-color:rgb(148, 148, 148);
+  color:black;
+  display:block;
+  float:left;
+  margin:4px;
 }
 #add-champ-button strong {
   font-size:3rem;
@@ -133,16 +139,6 @@
   text-align: center;
   left:50%;
   transform: translate(-50%);
-}
-#champ-pool div {
-  color:white;
-}
-#champ-pool img {
-  height:80px;
-  width:80px;
-  margin:4px;
-  border: 2px whitesmoke solid;
-  border-radius:80px;
 }
 #selected-champion-list div {
   display:inline-block;
@@ -173,7 +169,9 @@
   display:none;
   position:fixed;
   width:auto;
+  max-width:70%;
   height:auto;
+  max-height:80vh;
   left:50%;
   top:4rem;
   transform:translateX(-50%);
@@ -181,18 +179,33 @@
   background-color:black;
   z-index:99;
   color:white;
+  overflow-y:scroll;
 }
 #modal img {
   width:80px;
   height:80px;
   border:4px white solid;
   border-radius:80px;
+  margin:0px;
+}
+@media only screen and (max-width:800px) {
+  #modal img {
+    width:60px;
+    height:60px;
+    border-radius:60px;
+    border:2px white solid;
+    margin:2px;
+  }
+  #modal {
+    width:90%;
+  }
 }
 #modal h1 {
   padding-bottom:1rem;
 }
 #modal-quit {
-  position:absolute;
+  display:block;
+  position: fixed;
   top:1rem;
   right:1rem;
   color:white;
