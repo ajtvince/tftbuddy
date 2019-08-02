@@ -495,29 +495,17 @@ function add_champion(url, num) {
     if (champion_array[num].type === "Noble" || champion_array[num].type2 === "Noble" || champion_array[num].type3 === "Noble") {
         document.getElementById("nobleType").style.display = "inline-block";
         document.getElementById("nobleType").getElementsByTagName("span")[0].innerHTML = num_noble;
-        if (num_noble >= 2) {
+        if (num_noble >= 3) {
             document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "red";
             document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderRightColor = "red";
             document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
             document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
-            document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
-            document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
-        }
-        if (num_noble >= 4) {
-            document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "red";
-            document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
-            document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "white";
-            document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderRightColor = "white";
-            document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
-            document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
         }
         if (num_noble >= 6) {
-            document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "red";
-            document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderRightColor = "red";
+            document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "red";
+            document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderRightColor = "red";
             document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
             document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderRightColor = "white";
-            document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
-            document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderRightColor = "white";
         }
     }
     if (champion_array[num].type === "Ninja" || champion_array[num].type2 === "Ninja" || champion_array[num].type3 === "Ninja") {
@@ -609,6 +597,7 @@ function add_champion(url, num) {
 
     let delete_champ = document.createElement("div");
     delete_champ.innerHTML = "<strong>-</strong>";
+    delete_champ.style.cursor = "pointer";
     delete_champ.addEventListener('click', function() {
         champ_container.style.display = "none";
         if (champion_array[num].type === "Glacial" || champion_array[num].type2 === "Glacial" || champion_array[num].type3 === "Glacial") {
@@ -993,32 +982,20 @@ function add_champion(url, num) {
             if (num_noble === 0) {
                 document.getElementById("nobleType").style.display = "none";
             }
-            if (num_noble === 1) {
+            if (num_noble === 2) {
                 document.getElementById("nobleInfo").style.color = "white";
                 document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
                 document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
-            if (num_noble === 3) {
+            if (num_noble === 5) {
                 document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
                 document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderColor = "white";
                 document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "red";
                 document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "red";
             }
-            if (num_noble === 5) {
-                document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderColor = "white";
+            if (num_noble >= 6) {
                 document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "red";
                 document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "red";
-                document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
-            }
-            if (num_noble >= 6) {
-                document.getElementById("nobleInfo").getElementsByTagName("p")[1].style.color = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[1].style.borderColor = "white";
-                document.getElementById("nobleInfo").getElementsByTagName("p")[2].style.color = "red";
-                document.getElementById("nobleInfo").getElementsByTagName("span")[2].style.borderColor = "red";
                 document.getElementById("nobleInfo").getElementsByTagName("p")[0].style.color = "white";
                 document.getElementById("nobleInfo").getElementsByTagName("span")[0].style.borderColor = "white";
             }
@@ -1195,7 +1172,7 @@ class TeamPlanner extends React.Component {
                     document.getElementById("modal").style.display = "none";
                     document.getElementById("modal-overlay").style.display = "none";
                 });
-                document.getElementById("modal").appendChild(champ_icon);
+                document.getElementById("modal-list").appendChild(champ_icon);
                 check_fill++;
             }
         }
@@ -1225,7 +1202,8 @@ class TeamPlanner extends React.Component {
                         <div onClick={this.close_modal} id="modal-overlay"></div>
                         <div id="modal">
                             <h1>Select a Champion</h1>
-                            <div onClick={this.close_modal} id="modal-quit">X</div>
+                            <div onClick={this.close_modal} id="modal-quit"><div></div><div></div></div>
+                            <div id="modal-list"></div>
                         </div>
                         
                         <div id="selected-champion-type">
@@ -1429,6 +1407,113 @@ class TeamPlanner extends React.Component {
                             </div>
                         </div>                      
                     
+                    </div>
+
+                </div>
+                <br/>
+                <div id="item-container">
+
+                    <h1>Items</h1>
+                    <div id="items">
+                        <div id="item-row">
+                            <div class="border-item"></div>
+                            <div class="border-item"></div>
+                            <div class="border-item"></div>
+                            <div class="border-item"></div>
+                            <div class="border-item"></div>
+                            <div class="border-item"></div>
+                            <div class="border-item"></div>
+                            <div class="border-item"></div>
+                            <div class="border-item"></div>
+                        </div>
+                        <div id="item-row">
+                            <div class="border-item"></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div id="item-row">
+                            <div class="border-item"></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div id="item-row">
+                            <div class="border-item"></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div id="item-row">
+                            <div class="border-item"></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div id="item-row">
+                            <div class="border-item"></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div id="item-row">
+                            <div class="border-item"></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div id="item-row">
+                            <div class="border-item"></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div id="item-row">
+                            <div class="border-item"></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
 
                 </div>

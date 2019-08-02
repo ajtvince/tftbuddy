@@ -11,16 +11,25 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+body {
+  background-color:darkslategray;
+}
+button {
+  cursor: pointer;
+}
 #root {
   margin-top:3rem;
 }
 #content-container {
   width:100%;
-  max-width:1200px;
-  background-color:rgb(45, 60, 60);
+  max-width:1100px;
   margin:auto;
   position:relative;
+  height:auto;
   padding:1rem;
+  padding-bottom:4rem;
+  background-color:rgb(45, 60, 60);
+  box-shadow: 0px 10px 10px black;
 }
 
 /* Site Navigation */
@@ -30,15 +39,50 @@
   width:100%;
   height:3rem;
   line-height:2.8rem;
-  background-color:darkslategrey;
+  background-color:rgb(17,39,39);
   font-size:16px;
   text-align:center;
+  z-index: 99;
 }
-#nav input, button {
-  position:relative;
-  padding:4px;
+#nav-container {
+  width:100%;
+  max-width:1100px;
+  position: relative;
+  margin:auto;
 }
-
+#nav-container > button {
+  border:none;
+  background-color:darkgoldenrod;
+  color:white;
+  border-radius: 2px;
+  font-size:1rem;
+  padding:.3rem;
+  top:.5rem;
+}
+#nav-container > #goto-team-planner {
+  position:absolute;
+  right:20rem;
+}
+#nav-container > input {
+  position:absolute;
+  right:6.2rem;
+  font-size:1rem;
+  border:none;
+  border-radius:2px;
+  line-height: 2rem;
+  top:.5rem;
+  padding-left:.25rem;
+}
+#nav-container > #search-button {
+  position: absolute;
+  right:2rem;
+}
+#nav-container > p {
+  position: absolute;
+  left:2rem;
+  color:white;
+  font-size:1.6rem;
+}
 /* Container Left */
 #containerL {
   position:absolute;
@@ -117,19 +161,21 @@
 }
 
 /* Team Planner */
-#team-planner-container h1 {
+#team-planner-container > h1 {
   color:whitesmoke;
+  padding-bottom:1rem;
 }
 #add-champ-button {
   height:80px;
   width:80px;
   border:none;
   border-radius:80px;
-  background-color:rgb(148, 148, 148);
-  color:black;
+  background-color:darkgoldenrod;
+  color:white;
   display:block;
   float:left;
   margin:4px;
+  position: relative;
 }
 #add-champ-button strong {
   font-size:3rem;
@@ -139,6 +185,9 @@
   text-align: center;
   left:50%;
   transform: translate(-50%);
+}
+#selected-champion-list {
+  padding-bottom:1rem;
 }
 #selected-champion-list div {
   display:inline-block;
@@ -176,19 +225,37 @@
   top:4rem;
   transform:translateX(-50%);
   padding:2rem;
+  padding-top:1rem;
   background-color:black;
   z-index:99;
   color:white;
+}
+#modal-list {
   overflow-y:scroll;
+  height:auto;
+  max-height:50vh;
 }
 #modal img {
   width:80px;
   height:80px;
   border:4px white solid;
   border-radius:80px;
-  margin:0px;
+  margin:2px;
 }
-@media only screen and (max-width:800px) {
+
+@media only screen and (max-width:650px) {
+  #modal img {
+    width:50px;
+    height:50px;
+    border-radius:50px;
+    border:2px white solid;
+    margin:2px;
+  }
+  #modal {
+    width:100%;
+  }
+}
+@media only screen and (min-width:651px) and (max-width:1000px) {
   #modal img {
     width:60px;
     height:60px;
@@ -197,19 +264,35 @@
     margin:2px;
   }
   #modal {
-    width:90%;
+    width:100%;
   }
 }
+@media only screen and (max-width:1000px) {
+  
+}
+
 #modal h1 {
   padding-bottom:1rem;
 }
 #modal-quit {
-  display:block;
-  position: fixed;
+  position:absolute;
   top:1rem;
-  right:1rem;
-  color:white;
+  right:.5rem;
+  padding:1rem;
 }
+#modal-quit div {
+  background-color:white;
+  width:30px;
+  height:4px;
+
+}
+#modal-quit div:nth-child(2) {
+  transform: rotate(45deg);
+}
+#modal-quit div:nth-child(1) {
+  transform: translateY(4px) rotate(-45deg);
+}
+
 #modal-overlay {
   display:none;
   position:fixed;
@@ -220,6 +303,31 @@
   right:0px;
   bottom:0px;
 } 
+
+/* Item Container */
+@media screen and (min-width:628px) {
+  #item-container {
+    display:block;
+    padding-top:4rem;
+    text-align:center;
+    color:white;
+  }
+  #item-container #items {
+    width:100%;
+    max-width:600px;
+    margin:auto;
+  }
+  #item-row > div {
+    display:inline-block;
+    width:66px;
+    height:66px;
+    border:2px solid rgb(45, 60, 60);
+    background-color:white;
+  }
+  .border-item {
+    border-radius:66px;
+  }
+}
 
 /* Champion Class/Origin Styles */
 #assassinType, #blademasterType, #brawlerType, #elementalistType, #guardianType, #gunslingerType, #knightType, #rangerType, #shapeshifterType, #sorcererType, #demonType, #dragonType, #exileType, #glacialType, #imperialType, #nobleType, #ninjaType, #phantomType, #pirateType, #robotType, #voidType, #wildType, #yordleType {
