@@ -287,6 +287,158 @@ button {
   padding-bottom:1rem;
 }
 
+/* Champion Info Modal */
+#champ-modals div {
+  position:fixed;
+  z-index:99;
+  width:400px;
+  height:auto;
+  color:white;
+  left:50%;
+  transform: translateX(-50%);
+  top:10%;
+  font-size:1.2rem;
+}
+#champ-modals > div > img {
+  width:100%;
+}
+#champ-modals > div > h2 {
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  z-index:99;
+  text-shadow: 2px 4px 8px black;
+}
+#champ-modals #modal-colL {
+  position:absolute;
+  top:1rem;
+  width:100px;
+  left:260px;
+}
+#champ-modals > div > div > p {
+  padding:.25rem;
+  text-shadow: 2px 4px 8px black;
+  font-weight: bold;
+}
+#champ-modals #modal-colR {
+  position: absolute;
+  width:100px;
+  top:1rem;
+  left:360px;
+}
+#champ-modals #champ-info-overlay {
+  position:absolute;
+  width:100%;
+  height:236px;
+  top:0px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#champ-modals #champ-type-1 {
+  position:absolute;
+  top:60px;
+  text-align:left;
+  left:210px;
+}
+#champ-type-1 h4 {
+  display:inline-block;
+  transform: translateY(-8px);
+  padding-left:4px;
+}
+#champ-modals #champ-type-2 {
+  position:absolute;
+  top:100px;
+  text-align:left;
+  left:210px;
+}
+#champ-type-2 > h4 {
+  display:inline-block;
+  transform: translateY(-8px);
+  padding-left:4px;
+}
+#champ-modals #champ-type-3 {
+  position:absolute;
+  top:140px;
+  text-align:left;
+  left:210px;
+}
+#champ-type-3 h4 {
+  display:inline-block;
+  transform: translateY(-8px);
+  padding-left:4px;
+}
+#champ-modals #exit-champ-info {
+  position:absolute;
+  top:0px;
+  left:386px;
+  width:26px;
+  height:26px;
+  cursor: pointer;
+  z-index:100;
+}
+#exit-champ-info div:nth-child(1) {
+  background-color:white;
+  width:20px;
+  height:4px;
+  transform: translateX(-10px) translateY(8px) rotate(45deg);
+}
+#exit-champ-info div:nth-child(2) {
+  background-color:white;
+  width:20px;
+  height:4px;
+  transform: translateX(-10px) translateY(8px) rotate(-45deg);
+}
+#champ-modals #champ-items {
+  position: absolute;
+  display:block;
+  width:180px;
+  height:40px;
+  z-index:99;
+  left:100px;
+  top:186px;
+}
+#champ-modals #champ-items > div:nth-child(1) {
+  width:40px;
+  height:40px;
+  border-radius:40px;
+  background-color:rgb(70,70,70);
+  position:absolute;
+  left:20px;
+  top:0px;
+  font-size:2rem;
+  text-align: center;
+  line-height: 32px;
+  color:rgb(140,140,140);
+  cursor:pointer;
+}
+#champ-modals #champ-items > div:nth-child(2) {
+  width:40px;
+  height:40px;
+  border-radius:40px;
+  background-color:rgb(70,70,70);
+  position:absolute;
+  left:80px;
+  top:0px;
+  font-size:2rem;
+  text-align: center;
+  line-height: 32px;
+  color:rgb(140,140,140);
+  cursor:pointer;
+}
+#champ-modals #champ-items > div:nth-child(3) {
+  width:40px;
+  height:40px;
+  border-radius:40px;
+  background-color:rgb(70,70,70);
+  position:absolute;
+  left:140px;
+  top:0px;
+  font-size:2rem;
+  text-align: center;
+  line-height: 32px;
+  color:rgb(140,140,140);
+  cursor:pointer;
+}
+
 
 @media only screen and (max-width:650px) {
   #modal img, #modal-items img {
@@ -364,6 +516,9 @@ button {
 #item-container {
   display: none;
 }
+
+
+
 /* Champion Class/Origin Styles */
 #assassinType, #blademasterType, #brawlerType, #elementalistType, #guardianType, #gunslingerType, #knightType, #rangerType, #shapeshifterType, #sorcererType, #demonType, #dragonType, #exileType, #glacialType, #imperialType, #nobleType, #ninjaType, #phantomType, #pirateType, #robotType, #voidType, #wildType, #yordleType {
   display:none;

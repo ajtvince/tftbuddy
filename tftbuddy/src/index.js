@@ -77,6 +77,57 @@ import traitSorcerer from './etc/tft-assets/trait_icon_sorcerer.png';
 import traitVoid from './etc/tft-assets/trait_icon_void.png';
 import traitWild from './etc/tft-assets/trait_icon_wild.png';
 import traitYordle from './etc/tft-assets/trait_icon_yordle.png';
+import splashAatrox from './etc/splash/Aatrox_0.jpg';
+import splashAhri from './etc/splash/Ahri_0.jpg';
+import splashAkali from './etc/splash/Akali_0.jpg';
+import splashAnivia from './etc/splash/Anivia_0.jpg';
+import splashAshe from './etc/splash/Ashe_0.jpg';
+import splashAurelionSol from './etc/splash/AurelionSol_0.jpg';
+import splashBlitzcrank from './etc/splash/Blitzcrank_0.jpg';
+import splashBrand from './etc/splash/Brand_0.jpg';
+import splashBraum from './etc/splash/Braum_0.jpg';
+import splashChogath from './etc/splash/Chogath_0.jpg';
+import splashDarius from './etc/splash/Darius_0.jpg';
+import splashDraven from './etc/splash/Draven_0.jpg';
+import splashElise from './etc/splash/Elise_0.jpg';
+import splashEvelynn from './etc/splash/Evelynn_0.jpg';
+import splashFiora from './etc/splash/Fiora_0.jpg';
+import splashGangplank from './etc/splash/Gangplank_0.jpg';
+import splashGaren from './etc/splash/Garen_0.jpg';
+import splashGnar from './etc/splash/Gnar_0.jpg';
+import splashGraves from './etc/splash/Graves_0.jpg';
+import splashKarthus from './etc/splash/Karthus_0.jpg';
+import splashKassadin from './etc/splash/Kassadin_0.jpg';
+import splashKatarina from './etc/splash/Katarina_0.jpg';
+import splashKayle from './etc/splash/Kayle_0.jpg';
+import splashKennen from './etc/splash/Kennen_0.jpg';
+import splashKhazix from './etc/splash/Khazix_0.jpg';
+import splashKindred from './etc/splash/Kindred_0.jpg';
+import splashLeona from './etc/splash/Leona_0.jpg';
+import splashLissandra from './etc/splash/Lissandra_0.jpg';
+import splashLucian from './etc/splash/Lucian_0.jpg';
+import splashLulu from './etc/splash/Lulu_0.jpg';
+import splashMissFortune from './etc/splash/MissFortune_0.jpg';
+import splashMordekaiser from './etc/splash/Mordekaiser_0.jpg';
+import splashMorgana from './etc/splash/Morgana_0.jpg';
+import splashNidalee from './etc/splash/Nidalee_0.jpg';
+import splashPoppy from './etc/splash/Poppy_0.jpg';
+import splashPyke from './etc/splash/Pyke_0.jpg';
+import splashReksai from './etc/splash/RekSai_0.jpg';
+import splashRengar from './etc/splash/Rengar_0.jpg';
+import splashSejuani from './etc/splash/Sejuani_0.jpg';
+import splashShen from './etc/splash/Shen_0.jpg';
+import splashShyvana from './etc/splash/Shyvana_0.jpg';
+import splashSwain from './etc/splash/Swain_0.jpg';
+import splashTristana from './etc/splash/Tristana_0.jpg';
+import splashTwistedFate from './etc/splash/TwistedFate_0.jpg';
+import splashVarus from './etc/splash/Varus_0.jpg';
+import splashVayne from './etc/splash/Vayne_0.jpg';
+import splashVeigar from './etc/splash/Veigar_0.jpg';
+import splashVolibear from './etc/splash/Volibear_0.jpg';
+import splashWarwick from './etc/splash/Warwick_0.jpg';
+import splashYasuo from './etc/splash/Yasuo_0.jpg';
+import splashZed from './etc/splash/Zed_0.jpg';
 
 
 const items_array = [{item: itemNLR}, {item: itemBF}, {item: itemChain}, {item: itemMR}, {item: itemBow}, {item: itemBelt}, {item: itemTear}, {item: itemRageblade}, {item: itemDivine}, {item: itemBoRK, type: "Blademaster"}, {item: itemGunblade}, {item: itemGhostblade, type: "Assassin"}, {item: itemLvlBlade}, {item: itemWarmogs}, {item: itemFH}, {item: itemZephyr}, {item: itemKnight, type: "Knight"}, {item: itemRFC}, {item: itemShojin}, {item: itemBT}, {item: itemFoN}, {item: itemEcho}, {item: itemMorello}, {item: itemLocket}, {item: itemRedemption}, {item: itemIE}, {item: itemGA}, {item: itemRabadons}, {item: itemSeraph}, {item: itemPD}, {item: itemHurricane}, {item: itemThornmail}, {item: itemFM, type: "Glacial"}, {item: itemZeke}, {item: itemRedBuff}, {item: itemTitanic}, {item: itemSorcerer, type: "Sorcerer"}, {item: itemSS}, {item: itemDragonClaw}, {item: itemSilence}, {item: itemSwordBreaker}, {item: itemSpatula}, {item: itemDemon, type: "Demon"}];
@@ -264,6 +315,185 @@ function get_emblem(rankEmblem) {
 
 let current_champ = "";
 
+function get_champ_splash(name) {
+    switch(name) {
+        case "Aatrox": return splashAatrox; break;
+        case "Ahri": return splashAhri; break;
+        case "Akali": return splashAkali; break;
+        case "Anivia": return splashAnivia; break;
+        case "Ashe": return splashAshe; break;
+        case "AurelionSol": return splashAurelionSol; break;
+        case "Blitzcrank": return splashBlitzcrank; break;
+        case "Brand": return splashBrand; break;
+        case "Braum": return splashBraum; break;
+        case "Chogath": return splashChogath; break;
+        case "Darius": return splashDarius; break;
+        case "Draven": return splashDraven; break;
+        case "Elise": return splashElise; break;
+        case "Evelynn": return splashEvelynn; break;
+        case "Fiora": return splashFiora; break;
+        case "Gangplank": return splashGangplank; break;
+        case "Garen": return splashGaren; break;
+        case "Gnar": return splashGnar; break;
+        case "Graves": return splashGraves; break;
+        case "Karthus": return splashKarthus; break;
+        case "Kassadin": return splashKassadin; break;
+        case "Katarina": return splashKatarina; break;
+        case "Kayle": return splashKayle; break;
+        case "Kennen": return splashKennen; break;
+        case "Khazix": return splashKhazix; break;
+        case "Kindred": return splashKindred; break;
+        case "Leona": return splashLeona; break;
+        case "Lissandra": return splashLissandra; break;
+        case "Lucian": return splashLucian; break;
+        case "Lulu": return splashLulu; break;
+        case "MissFortune": return splashMissFortune; break;
+        case "Mordekaiser": return splashMordekaiser; break;
+        case "Morgana": return splashMorgana; break;
+        case "Nidalee": return splashNidalee; break;
+        case "Poppy": return splashPoppy; break;
+        case "Pyke": return splashPyke; break;
+        case "Reksai": return splashReksai; break;
+        case "Rengar": return splashRengar; break;
+        case "Sejuani": return splashSejuani; break;
+        case "Shen": return splashShen; break;
+        case "Shyvana": return splashShyvana; break;
+        case "Swain": return splashSwain; break;
+        case "Tristana": return splashTristana; break;
+        case "TwistedFate": return splashTwistedFate; break;
+        case "Varus": return splashVarus; break;
+        case "Vayne": return splashVayne; break;
+        case "Veigar": return splashVeigar; break;
+        case "Volibear": return splashVolibear; break;
+        case "Warwick": return splashWarwick; break;
+        case "Yasuo": return splashYasuo; break;
+        case "Zed": return splashZed; break;
+
+    }
+}
+
+let modal_count = 0;
+
+function open_champion_info(num) {
+    let champ_info = document.createElement("div");
+    let champ_info_exit = document.createElement("div");
+    champ_info_exit.id = "exit-champ-info";
+    let exit_div1 = document.createElement("div");
+    let exit_div2 = document.createElement("div");
+    champ_info_exit.appendChild(exit_div1);
+    champ_info_exit.appendChild(exit_div2);
+    let champ_name = champion_array[num].name;
+    let champ_splash_src = get_champ_splash(champ_name);
+    let champ_splash = document.createElement("img");
+    let splash_overlay = document.createElement("div");
+    splash_overlay.id = "champ-info-overlay";
+    let champ_name_h2 = document.createElement("h2");
+    let champ_type1 = document.createElement("div");
+    let champ_type2 = document.createElement("div");
+    let champ_type3 = document.createElement("div");
+    champ_type1.id = "champ-type-1";
+    champ_type2.id = "champ-type-2";
+    champ_type3.id = "champ-type-3";
+    let champ_type1_img = document.createElement("img");
+    let champ_type2_img = document.createElement("img");
+    let champ_type3_img = document.createElement("img");
+    let champ_type1_text = document.createElement("h4");
+    let champ_type2_text = document.createElement("h4");
+    let champ_type3_text = document.createElement("h4");
+    champ_type1_img.src = traitDemon;
+    champ_type2_img.src = traitBlademaster;
+    champ_type3_img.src = traitAssassin;
+    champ_type1_text.innerHTML = "Demon";
+    champ_type2_text.innerHTML = "Blademaster";
+    champ_type3_text.innerHTML = "Assassin";
+    champ_type1.appendChild(champ_type1_img);
+    champ_type1.appendChild(champ_type1_text);
+    champ_type2.appendChild(champ_type2_img);
+    champ_type2.appendChild(champ_type2_text);
+    champ_type3.appendChild(champ_type3_img);
+    champ_type3.appendChild(champ_type3_text);
+    let champ_ad = document.createElement("p");
+    let champ_ap = document.createElement("p");
+    let champ_ar = document.createElement("p");
+    let champ_mr = document.createElement("p");
+    let champ_crit = document.createElement("p");
+    let champ_crit_mult = document.createElement("p");
+    champ_ad.innerHTML = "AD:";
+    champ_ap.innerHTML = "AP:";
+    champ_ar.innerHTML = "Armor:";
+    champ_mr.innerHTML = "MR:";
+    champ_crit.innerHTML = "Crit:";
+    champ_crit_mult.innerHTML = "Crit Mult:";
+    let stat_ad = document.createElement("p");
+    let stat_ap = document.createElement("p");
+    let stat_ar = document.createElement("p");
+    let stat_mr = document.createElement("p");
+    let stat_crit = document.createElement("p");
+    let stat_crit_mult = document.createElement("p");
+    stat_ad.innerHTML = "70";
+    stat_ap.innerHTML = "40";
+    stat_ar.innerHTML = "30";
+    stat_mr.innerHTML = "20";
+    stat_crit.innerHTML = "25%";
+    stat_crit_mult.innerHTML = "125%";
+    let stat_columnL = document.createElement("div");
+    stat_columnL.appendChild(champ_ad);
+    stat_columnL.appendChild(champ_ap);
+    stat_columnL.appendChild(champ_ar);
+    stat_columnL.appendChild(champ_mr);
+    stat_columnL.appendChild(champ_crit);
+    stat_columnL.appendChild(champ_crit_mult);
+    stat_columnL.id = "modal-colL"
+    let stat_columnR = document.createElement("div");
+    stat_columnR.appendChild(stat_ad);
+    stat_columnR.appendChild(stat_ap);
+    stat_columnR.appendChild(stat_ar);
+    stat_columnR.appendChild(stat_mr);
+    stat_columnR.appendChild(stat_crit);
+    stat_columnR.appendChild(stat_crit_mult);
+    stat_columnR.id = "modal-colR";
+    champ_name_h2.innerHTML = champ_name;
+    champ_splash.src = champ_splash_src;
+    champ_info.id ="champ-info-box";
+
+    champ_info_exit.addEventListener('click', function () {
+        modal_count++;
+        document.getElementById("champ-modals").getElementsByTagName("div")[0].style.display = "none";
+    });
+
+    let champ_info_items = document.createElement("div")
+    let champ_item1 = document.createElement("div");
+    let champ_item2 = document.createElement("div");
+    let champ_item3 = document.createElement("div");
+
+    champ_item1.addEventListener('click', function () {
+        this.fill_modal_items();
+    });
+
+    champ_info_items.id = "champ-items";
+    champ_item1.innerHTML = "<strong>+</strong>";
+    champ_info_items.appendChild(champ_item1);
+    champ_info_items.appendChild(champ_item2);
+    champ_info_items.appendChild(champ_item3);
+
+    
+
+    champ_info.appendChild(splash_overlay);
+    champ_info.appendChild(champ_info_exit);
+    champ_info.appendChild(champ_splash);
+    champ_info.appendChild(champ_name_h2);
+    champ_info.appendChild(stat_columnL);
+    champ_info.appendChild(stat_columnR);
+    champ_info.appendChild(champ_type1);
+    champ_info.appendChild(champ_type2);
+    champ_info.appendChild(champ_type3);
+    champ_info.appendChild(champ_info_items);
+
+
+
+    document.getElementById("champ-modals").appendChild(champ_info);
+}
+
 function add_champion(url, num) {
     let champ_url = url;
     let champ_container = document.createElement("div");
@@ -275,12 +505,15 @@ function add_champion(url, num) {
         current_champ += current_champ_split;
         console.log("new");
     }
-    console.log(current_champ);
     champ_container.appendChild(added_champ);
     added_champ.src = champ_url;
     get_type(champion_array[num].type);
     get_type(champion_array[num].type2);
     get_type(champion_array[num].type3);
+
+    added_champ.addEventListener('click', function () {
+        open_champion_info(num);
+    });
 
     if (champion_array[num].type === "Glacial" || champion_array[num].type2 === "Glacial" || champion_array[num].type3 === "Glacial") {
         document.getElementById("glacialType").style.display = "inline-block";
