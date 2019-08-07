@@ -1,0 +1,1 @@
+const apiKey = '?api_key=RGAPI-f9bb6b8b-e871-44e4-aa5d-6c8ab910ef6d';

@@ -29,7 +29,7 @@ button {
   padding:1rem;
   padding-bottom:4rem;
   background-color:rgb(45, 60, 60);
-  box-shadow: 0px 10px 10px black;
+  box-shadow: 0px 8px 20px black;
 }
 
 /* Site Navigation */
@@ -85,21 +85,20 @@ button {
 }
 /* Container Left */
 #containerL {
-  position:absolute;
-  left:0px;
   width: 30%;
   height:auto;
+  position: relative;
   display:inline-block;
 }
 
 /* Container Right */
 #containerR {
-  position:absolute;
   right:0px;
   width: 70%;
   height:auto;
-  display:inline-block;
+  position: absolute;
   padding:1rem;
+  top:1rem;
 }
 
 /* Profile */
@@ -161,7 +160,7 @@ button {
 }
 
 /* Team Planner */
-#team-planner-container > h1 {
+#team-planner-container > h1, h2 {
   color:whitesmoke;
   padding-bottom:1rem;
 }
@@ -188,11 +187,13 @@ button {
 }
 #selected-champion-list {
   padding-bottom:1rem;
+  display:block;
+  min-height: 112px;
 }
-#selected-champion-list div {
+#selected-champion-list div, #selected-items-list div {
   display:inline-block;
 }
-#selected-champion-list img {
+#selected-champion-list img, #selected-items-list img {
   width:80px;
   height:80px;
   margin:4px;
@@ -200,7 +201,7 @@ button {
   border-radius:80px;
   position: relative;
 }
-#selected-champion-list > div > div {
+#selected-champion-list > div > div, #selected-items-list > div > div {
   position:absolute;
   width:30px;
   height:30px;
@@ -214,7 +215,7 @@ button {
 }
 
 /* Modal Box Champion Pool */
-#modal {
+#modal, #modal-items {
   display:none;
   position:fixed;
   width:auto;
@@ -230,70 +231,41 @@ button {
   z-index:99;
   color:white;
 }
-#modal-list {
+#modal-list, #modal-list-items {
   overflow-y:scroll;
   height:auto;
-  max-height:50vh;
+  max-height:60vh;
 }
-#modal img {
-  width:80px;
-  height:80px;
-  border:4px white solid;
-  border-radius:80px;
+#modal img, #modal-items img  {
+  width:70px;
+  height:70px;
+  border:2px white solid;
+  border-radius:70px;
   margin:2px;
 }
-
-@media only screen and (max-width:650px) {
-  #modal img {
-    width:50px;
-    height:50px;
-    border-radius:50px;
-    border:2px white solid;
-    margin:2px;
-  }
-  #modal {
-    width:100%;
-  }
-}
-@media only screen and (min-width:651px) and (max-width:1000px) {
-  #modal img {
-    width:60px;
-    height:60px;
-    border-radius:60px;
-    border:2px white solid;
-    margin:2px;
-  }
-  #modal {
-    width:100%;
-  }
-}
-@media only screen and (max-width:1000px) {
-  
-}
-
-#modal h1 {
+#modal h1, #modal-items h1 {
   padding-bottom:1rem;
 }
-#modal-quit {
+#modal-quit, #modal-quit-items {
   position:absolute;
   top:1rem;
   right:.5rem;
   padding:1rem;
 }
-#modal-quit div {
+#modal-quit div, #modal-quit-items div {
   background-color:white;
   width:30px;
   height:4px;
 
 }
-#modal-quit div:nth-child(2) {
+#modal-quit div:nth-child(2), #modal-quit-items div:nth-child(2) {
   transform: rotate(45deg);
 }
-#modal-quit div:nth-child(1) {
+#modal-quit div:nth-child(1), #modal-quit-items div:nth-child(1) {
   transform: translateY(4px) rotate(-45deg);
 }
 
-#modal-overlay {
+#modal-overlay, #modal-overlay-items {
   display:none;
   position:fixed;
   z-index:98;
@@ -303,6 +275,60 @@ button {
   right:0px;
   bottom:0px;
 } 
+
+/* Items */
+#select-item-container {
+  min-height:100px;
+}
+#select-item-container > h2 {
+  position:relative;
+  display:block;
+  color:white;
+  padding-bottom:1rem;
+}
+
+
+@media only screen and (max-width:650px) {
+  #modal img, #modal-items img {
+    width:42px;
+    height:42px;
+    border-radius:42px;
+    border:2px white solid;
+    margin:2px;
+  }
+  #modal, #modal-items {
+    width:100%;
+  }
+  #modal h1, #modal-items h1 {
+    font-size:1rem;
+  }
+  #modal-quit, #modal-quit-items {
+    top:.5rem;
+    right:.5rem;
+    padding:.5rem;
+  }
+  #modal-quit div, #modal-quit-items div {
+    background-color:white;
+    width:20px;
+    height:4px;
+  
+  }
+}
+@media only screen and (min-width:651px) and (max-width:1000px) {
+  #modal img, #modal-items img {
+    width:60px;
+    height:60px;
+    border-radius:60px;
+    border:2px white solid;
+    margin:2px;
+  }
+  #modal, #modal-items {
+    width:100%;
+  }
+  #modal h1, #modal-items h1 {
+    font-size:1.6rem;
+  }
+}
 
 /* Item Container */
 @media screen and (min-width:628px) {
@@ -319,16 +345,25 @@ button {
   }
   #item-row > div {
     display:inline-block;
-    width:66px;
-    height:66px;
-    border:2px solid rgb(45, 60, 60);
-    background-color:white;
+    width:40px;
+    height:auto;
+    padding:2px;
+    padding-bottom:0px;
+  }
+  #item-row > div > img {
+    width:100%;
   }
   .border-item {
-    border-radius:66px;
+    margin:0px;
+    padding:0px;
+  }
+  .border-item > img {
+    border-radius:40px;
   }
 }
-
+#item-container {
+  display: none;
+}
 /* Champion Class/Origin Styles */
 #assassinType, #blademasterType, #brawlerType, #elementalistType, #guardianType, #gunslingerType, #knightType, #rangerType, #shapeshifterType, #sorcererType, #demonType, #dragonType, #exileType, #glacialType, #imperialType, #nobleType, #ninjaType, #phantomType, #pirateType, #robotType, #voidType, #wildType, #yordleType {
   display:none;
