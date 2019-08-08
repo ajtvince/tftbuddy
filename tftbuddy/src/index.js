@@ -457,8 +457,7 @@ function open_champion_info(num) {
     champ_info.id ="champ-info-box";
 
     champ_info_exit.addEventListener('click', function () {
-        modal_count++;
-        document.getElementById("champ-modals").getElementsByTagName("div")[0].style.display = "none";
+        champ_info.style.display = "none";
     });
 
     let champ_info_items = document.createElement("div")
@@ -475,8 +474,6 @@ function open_champion_info(num) {
     champ_info_items.appendChild(champ_item1);
     champ_info_items.appendChild(champ_item2);
     champ_info_items.appendChild(champ_item3);
-
-    
 
     champ_info.appendChild(splash_overlay);
     champ_info.appendChild(champ_info_exit);
