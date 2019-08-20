@@ -313,29 +313,71 @@ button {
   z-index:99;
   text-shadow: 2px 4px 8px black;
 }
-#champ-modals #modal-colL {
-  position:absolute;
-  top:1rem;
-  width:40%;
-  left:45%;
-}
 #champ-modals > div > div > p {
   padding:.25rem;
   text-shadow: 2px 4px 8px black;
   font-weight: bold;
 }
-#champ-modals #modal-colR {
+#champ-modals #modal-colR1 {
   position: absolute;
   width:40%;
-  top:1rem;
+  top:5.5rem;
+  left:55%;
+}
+#modal-colL1 img {
+  display:block;
+  padding:.40rem;
+}
+#modal-colL2 img {
+  display:block;
+  padding:.40rem;
+}
+#champ-modals #modal-colR2 {
+  position:absolute;
+  top:5.5rem;
+  width:40%;
+  left:85%;
+}
+#champ-modals #modal-colL1 {
+  position:absolute;
+  top:5.5rem;
+  width:40%;
+  left:45%;
+}
+#champ-modals #modal-colL2 {
+  position:absolute;
+  top:5.5rem;
+  width:40%;
   left:75%;
+}
+#champ-modals #hp-mana-container {
+  position:absolute;
+  top:1rem;
+  width:50%;
+  left:45%;
+}
+#champ-modals #hp-mana-container p:nth-child(1) {
+  background-color:red;
+  width:100%;
+  padding:.1rem;
+  padding-left:.2rem;
+  text-shadow: none;
+  margin:.2rem;
+}
+#champ-modals #hp-mana-container p:nth-child(2) {
+  background-color:blue;
+  width:100%;
+  padding:.1rem;
+  padding-left:.2rem;
+  text-shadow: none;
+  margin:.2rem;
 }
 #champ-modals #champ-info-overlay {
   position:absolute;
   width:100%;
   height:236px;
   top:0px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 #champ-modals #champ-type-1 {
   position:absolute;
@@ -446,6 +488,67 @@ button {
   cursor:pointer;
 }
 
+@media only screen and (max-width:420px) {
+  #champ-modals {
+    width:100%;
+  }
+  #champ-modals #champ-info-box {
+    width:300px;
+  }  
+  #champ-modals > #champ-info-box > img {
+    width:300px;
+    height:236px;
+    object-fit: cover;
+  }
+  #champ-modals #champ-items > div:nth-child(1) {
+    width:34px;
+    height:34px;
+    border-radius: 34px;
+    line-height: 26px;
+  }
+  #champ-modals #champ-items > div:nth-child(2) {
+    left:40px;
+    width:34px;
+    height:34px;
+    border-radius: 34px;
+    line-height: 26px;
+  }
+  #champ-modals #champ-items > div:nth-child(3) {
+    left:80px;
+    width:34px;
+    height:34px;
+    border-radius: 34px;
+    line-height: 26px;
+  }
+  #champ-modals #modal-colR2 {
+    left:80%;
+  }
+  #champ-modals #modal-colL2 {
+    left:70%;
+  }
+  #champ-type-1 h4 {
+    font-size:1rem;
+  }
+  #champ-type-2 h4 {
+    font-size:1rem;
+  }
+  #champ-type-3 h4 {
+    font-size:1rem;
+  }
+  #champ-type-1 img {
+    width:26px;
+  }
+  #champ-type-2 img {
+    width:26px;
+  }
+  #champ-type-3 img {
+    width:26px;
+  }
+  #champ-modals > div > div > p {
+    font-size:1rem;
+    padding:.4rem;
+  }
+}
 
 @media only screen and (max-width:650px) {
   #modal img, #modal-items img {
@@ -472,11 +575,8 @@ button {
     height:4px;
   
   }
-  #champ-modals div {
-    width:90%;
-  }
-
 }
+
 @media only screen and (min-width:651px) and (max-width:1000px) {
   #modal img, #modal-items img {
     width:60px;
