@@ -141,7 +141,7 @@ import iconCrit from './etc/tft-assets/crit.png';
 const items_array = [{item: itemNLR}, {item: itemBF}, {item: itemChain}, {item: itemMR}, {item: itemBow}, {item: itemBelt}, {item: itemTear}, {item: itemRageblade}, {item: itemDivine}, {item: itemBoRK, type: "Blademaster"}, {item: itemGunblade}, {item: itemGhostblade, type: "Assassin"}, {item: itemLvlBlade}, {item: itemWarmogs}, {item: itemFH}, {item: itemZephyr}, {item: itemKnight, type: "Knight"}, {item: itemRFC}, {item: itemShojin}, {item: itemBT}, {item: itemFoN}, {item: itemEcho}, {item: itemMorello}, {item: itemLocket}, {item: itemRedemption}, {item: itemIE}, {item: itemGA}, {item: itemRabadons}, {item: itemSeraph}, {item: itemPD}, {item: itemHurricane}, {item: itemThornmail}, {item: itemFM, type: "Glacial"}, {item: itemZeke}, {item: itemRedBuff}, {item: itemTitanic}, {item: itemSorcerer, type: "Sorcerer"}, {item: itemSS}, {item: itemDragonClaw}, {item: itemSilence}, {item: itemSwordBreaker}, {item: itemSpatula}, {item: itemDemon, type: "Demon"}];
 
 
-const key = "";
+const key = "?api_key=RGAPI-dcc349e4-41a7-4058-a8a5-5c818ffd6f99";
 const lolVersion="9.13.1";
 const urlSummonerLookup = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"
 const urlMatchHistory="https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/";
