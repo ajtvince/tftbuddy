@@ -1,6 +1,6 @@
-## TFT Buddy Team Planner
+# TFT Buddy Team Planner
 ## INCOMPLETE
-# Champion Selection
-![Example 1](../tftbuddy/tftbuddy/assets/tftbuddyex1.gif)
-# Item Selection
-![Example 1](../tftbuddy/tftbuddy/assets/tftbuddyex2.gif)
+### Champion Selection
+![Example1](./tftbuddy/assets/tftbuddyex1.gif)
+### Item Selection
+![Example2](./tftbuddy/assets/tftbuddyex2.gif
